@@ -127,8 +127,9 @@ for index in range(len(messageContent)):
     # message = """(1/2)您已成功定制联通宽带在线有限公司5575(10655575102)的10元给力付包月业务，发送TD10到10655575102退订"""
     isValid = getValidMessage(message)
     if not isValid:
+        # -11代表不包含完成时的状态关键字
         csvlist.append(
-            (messageContent[index][0], messageContent[index][1], messageContent[index][2], messageContent[index][3], -1,
+            (messageContent[index][0], messageContent[index][1], messageContent[index][2], messageContent[index][3], -11,
              -1, -1, -1, -1, -1, -1))
         continue
     else:
@@ -136,9 +137,10 @@ for index in range(len(messageContent)):
         if status > -1:
             sp_name = getSpName(message)
             if sp_name == -1:
+                # -13代表没有合适的 sp_name 和 charge_code 组合
                 csvlist.append((
                     messageContent[index][0], messageContent[index][1], messageContent[index][2],
-                    messageContent[index][3], -1, -1, -1,
+                    messageContent[index][3], -13, -1, -1,
                     -1, -1, -1, -1))
                 continue
             else:
@@ -148,9 +150,10 @@ for index in range(len(messageContent)):
                         messageContent[index][3], status,
                         i[0], i[1], i[2], i[3], i[4], i[5]))
         else:
+            # -12代表虽然包含了完成时，但是仍然不是要找的3个类别中的东西
             csvlist.append((
                 messageContent[index][0], messageContent[index][1], messageContent[index][2], messageContent[index][3],
-                -1, -1, -1, -1,
+                -12, -1, -1, -1,
                 -1, -1, -1))
             continue
 # write list
