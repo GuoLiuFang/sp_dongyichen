@@ -4,13 +4,15 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 import MySQLdb
+import re
 
 
-def fetchMessageAll():
+def fetchMessageAll(start, end):
     dbConenectMessage = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
                                         use_unicode=True, port=5209, charset='utf8')
     messageExecutor = dbConenectMessage.cursor()
-    messageExecutor.execute("""select create_time,uuid,content,id from honeycomb.sms_received_histories_all""")
+    messageExecutor.execute(
+        """select create_time,uuid,content,id from honeycomb.sms_received_histories_all where id BETWEEN """ + start + """ and """ + end)
     messageContent = messageExecutor.fetchall()
     return messageContent
 
@@ -97,14 +99,17 @@ def getChargeConde(sp_name, message):
             if len(code_list) > 1:
                 for code in code_list:
                     if code in message:
-                        return (charge_tuple[0], charge_tuple[1], sp_charge_str, code)
+                        tmp = re.match("""\d+元""", code)
+                        if tmp:
+                            return -1
+                        else:
+                            return (charge_tuple[0], charge_tuple[1], sp_charge_str, code)
     return -1
 
 
 # ---从这里开始是 main 函数入口
 dbConenectReference = MySQLdb.connect(host='192.168.12.66', user='tigerreport', passwd='titmds4sp',
-                                      db='TigerReport_production',
-                                      use_unicode=True, charset='utf8')
+                                      db='TigerReport_production', use_unicode=True, charset='utf8')
 executor = dbConenectReference.cursor()
 executor.execute("""select id, name from sp_channels""")
 sp_channels = executor.fetchall()
@@ -112,13 +117,14 @@ executor.execute("""select id,amount,name from charge_codes""")
 charge_codes = executor.fetchall()
 # messageContent = fetchMessageByDay(sys.argv[1])
 # messageContent = fetchMessageByDay('2016-10-01')
-messageContent = fetchMessageAll()
+messageContent = fetchMessageAll(sys.argv[1], sys.argv[2])
+# messageContent = fetchMessageAll(str(1), str(10))
 csvfile = open("/data/sdg/guoliufang/other_work_space/ResultCsv.txt", mode='wa+')
 # csvfile = open("/Users/LiuFangGuo/Downloads/ResultCsv.txt", mode='wa+')
 csvlist = []
 for index in range(len(messageContent)):
     message = messageContent[index][2].encode(encoding='utf-8')
-    # message = """订购提醒：您好！您已成功订购由北京中天华宇科技有限责任公司提供的税务杂志精编，10元/月（由中国移动代收费），72小时内退订免费。【发送6700至10086每月免费体验10GB咪咕视频定向流量，可以连续体验3个月！详情 http://url.cn/40C8anS 】"""
+    # message = """(1/2)您已成功定制联通宽带在线有限公司5575(10655575102)的10元给力付包月业务，发送TD10到10655575102退订"""
     isValid = getValidMessage(message)
     if not isValid:
         csvlist.append(
