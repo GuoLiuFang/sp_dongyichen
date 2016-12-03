@@ -12,7 +12,7 @@ def fetchMessageAll(start, end):
                                         use_unicode=True, port=5209, charset='utf8')
     messageExecutor = dbConenectMessage.cursor()
     messageExecutor.execute(
-        """select create_time,uuid,content,id from honeycomb.sms_received_histories_all where id BETWEEN """ + start + """ and """ + end)
+        """select create_time,uuid,content,id from honeycomb.sms_received_histories_all where content is not null and id BETWEEN """ + start + """ and """ + end)
     messageContent = messageExecutor.fetchall()
     return messageContent
 
@@ -22,7 +22,7 @@ def fetchMessageByDay(day):
                                         use_unicode=True, port=5209, charset='utf8')
     messageExecutor = dbConenectMessage.cursor()
     dayEnd = day + " 23:59:59"
-    sql = """select create_time,uuid,content,id from honeycomb.sms_received_histories_all where create_time BETWEEN '""" + day + """' and '""" + dayEnd + """'"""
+    sql = """select create_time,uuid,content,id from honeycomb.sms_received_histories_all where content is not null and create_time BETWEEN '""" + day + """' and '""" + dayEnd + """'"""
     messageExecutor.execute(sql)
     messageContent = messageExecutor.fetchall()
     return messageContent
@@ -35,7 +35,7 @@ def fetchMessageById():
     sql_get_max_id = """select max(id) from honeycomb.sms_received_histories_all_analysis"""
     messageExecutor.execute(sql_get_max_id)
     max_id = messageExecutor.fetchone()[0]
-    sql = """select create_time,uuid,content,id from honeycomb.sms_received_histories_all where id > """ + max_id
+    sql = """select create_time,uuid,content,id from honeycomb.sms_received_histories_all where content is not null and id > """ + max_id
     messageExecutor.execute(sql)
     messageContent = messageExecutor.fetchall()
     return messageContent
