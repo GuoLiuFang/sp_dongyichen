@@ -35,7 +35,7 @@ def fetchMessageById():
     sql_get_max_id = """select max(id) from honeycomb.sms_received_histories_all_analysis"""
     messageExecutor.execute(sql_get_max_id)
     max_id = messageExecutor.fetchone()[0]
-    sql = """select create_time,uuid,content,id from honeycomb.sms_received_histories_all where content is not null and id > """ + max_id
+    sql = """select create_time,uuid,content,id from honeycomb.sms_received_histories_all where content is not null and id > """ + str(max_id)
     messageExecutor.execute(sql)
     messageContent = messageExecutor.fetchall()
     return messageContent
@@ -117,7 +117,8 @@ executor.execute("""select id,amount,name from charge_codes""")
 charge_codes = executor.fetchall()
 # messageContent = fetchMessageByDay(sys.argv[1])
 # messageContent = fetchMessageByDay('2016-10-01')
-messageContent = fetchMessageAll(sys.argv[1], sys.argv[2])
+messageContent = fetchMessageById()
+# messageContent = fetchMessageAll(sys.argv[1], sys.argv[2])
 # messageContent = fetchMessageAll(str(1), str(10))
 csvfile = open("/data/sdg/guoliufang/other_work_space/ResultCsv.txt", mode='wa+')
 # csvfile = open("/Users/LiuFangGuo/Downloads/ResultCsv.txt", mode='wa+')
