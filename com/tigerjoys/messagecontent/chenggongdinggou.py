@@ -98,7 +98,7 @@ def getChargeConde(sp_name, message):
             code_list = targetStr.split('-')
             if len(code_list) > 1:
                 for code in code_list:
-                    if code in message:
+                    if (code) and (code in message):
                         tmp = re.match("""\d+元""", code)
                         if tmp:
                             return -1
