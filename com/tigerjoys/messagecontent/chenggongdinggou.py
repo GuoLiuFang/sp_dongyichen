@@ -76,6 +76,7 @@ def getStatus(message):
 
 def getSpName(message):
     result_list = []
+    sp_name_list = []
     for sp_tuple in sp_channels:
         sp_name = sp_tuple[1].encode(encoding='utf-8')
         if sp_name in message:
@@ -83,7 +84,11 @@ def getSpName(message):
             if ch_code == -1:
                 continue
             else:
-                result_list.append((sp_tuple[0], sp_name, ch_code[0], ch_code[1], ch_code[2], ch_code[3]))
+                sp_name_list.append(sp_name)
+                if ch_code[3] in sp_name_list:
+                    continue
+                else:
+                    result_list.append((sp_tuple[0], sp_name, ch_code[0], ch_code[1], ch_code[2], ch_code[3]))
     if len(result_list) > 0:
         return result_list
     return -1
