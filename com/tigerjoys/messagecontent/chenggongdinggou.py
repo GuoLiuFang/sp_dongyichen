@@ -35,7 +35,8 @@ def fetchMessageById():
     sql_get_max_id = """select max(id) from honeycomb.sms_received_histories_all_analysis"""
     messageExecutor.execute(sql_get_max_id)
     max_id = messageExecutor.fetchone()[0]
-    sql = """select create_time,uuid,content,id from honeycomb.sms_received_histories_all where content is not null and id > """ + str(max_id)
+    sql = """select create_time,uuid,content,id from honeycomb.sms_received_histories_all where content is not null and id > """ + str(
+        max_id)
     messageExecutor.execute(sql)
     messageContent = messageExecutor.fetchall()
     return messageContent
@@ -81,6 +82,7 @@ def ChargeCodeInSpNames(param):
             return True
     return False
 
+
 def getSpName(message):
     result_list = []
     sp_name_list = []
@@ -95,7 +97,9 @@ def getSpName(message):
                     continue
                 else:
                     sp_name_list.append(sp_name)
-                    result_list.append((sp_tuple[0], sp_name, ch_code[0], ch_code[1], ch_code[2], ch_code[3]))
+                    result_list.append((
+                        sp_tuple[0], sp_name, ch_code[0], ch_code[1], ch_code[2], ch_code[3], ch_code[4],
+                        ch_code[5], ch_code[6]))
     if len(result_list) > 0:
         return result_list
     return -1
@@ -115,7 +119,9 @@ def getChargeConde(sp_name, message):
                         if tmp:
                             return -1
                         else:
-                            return (charge_tuple[0], charge_tuple[1], sp_charge_str, code)
+                            charge_code_instruc_no_t = charge_tuple[4].replace("""*#T""", """""")
+                            return (charge_tuple[0], charge_tuple[1], sp_charge_str, charge_tuple[3], charge_tuple[4],
+                                    charge_code_instruc_no_t, code)
     return -1
 
 
@@ -125,13 +131,13 @@ dbConenectReference = MySQLdb.connect(host='192.168.12.66', user='tigerreport', 
 executor = dbConenectReference.cursor()
 executor.execute("""select id, name from sp_channels""")
 sp_channels = executor.fetchall()
-executor.execute("""select id,amount,name from charge_codes""")
+executor.execute("""select id, amount, name, dest_number, code from charge_codes""")
 charge_codes = executor.fetchall()
 # messageContent = fetchMessageByDay(sys.argv[1])
 # messageContent = fetchMessageByDay('2016-10-01')
-messageContent = fetchMessageById()
-# messageContent = fetchMessageAll(sys.argv[1], sys.argv[2])
-# messageContent = fetchMessageAll(str(1), str(10))
+# messageContent = fetchMessageById()
+messageContent = fetchMessageAll(sys.argv[1], sys.argv[2])
+# messageContent = fetchMessageAll(str(1), str(500))
 csvfile = open("/data/sdg/guoliufang/other_work_space/ResultCsv.txt", mode='wa+')
 # csvfile = open("/Users/LiuFangGuo/Downloads/ResultCsv.txt", mode='wa+')
 csvlist = []
@@ -142,8 +148,10 @@ for index in range(len(messageContent)):
     if not isValid:
         # -11代表不包含完成时的状态关键字
         csvlist.append(
-            (messageContent[index][0], messageContent[index][1], messageContent[index][2], messageContent[index][3], -11,
-             -1, -1, -1, -1, -1, -1))
+            (
+                messageContent[index][0], messageContent[index][1], messageContent[index][2], messageContent[index][3],
+                -11,
+                -1, -1, -1, -1, -1, -1, -1, -1, -1))
         continue
     else:
         status = getStatus(message)
@@ -154,20 +162,20 @@ for index in range(len(messageContent)):
                 csvlist.append((
                     messageContent[index][0], messageContent[index][1], messageContent[index][2],
                     messageContent[index][3], -13, -1, -1,
-                    -1, -1, -1, -1))
+                    -1, -1, -1, -1, -1, -1, -1))
                 continue
             else:
                 for i in sp_name:
                     csvlist.append((
                         messageContent[index][0], messageContent[index][1], messageContent[index][2],
                         messageContent[index][3], status,
-                        i[0], i[1], i[2], i[3], i[4], i[5]))
+                        i[0], i[1], i[2], i[3], i[4], i[5], i[6], i[7], i[8]))
         else:
             # -12代表虽然包含了完成时，但是仍然不是要找的3个类别中的东西
             csvlist.append((
                 messageContent[index][0], messageContent[index][1], messageContent[index][2], messageContent[index][3],
                 -12, -1, -1, -1,
-                -1, -1, -1))
+                -1, -1, -1, -1, -1, -1))
             continue
 # write list
 # dbWriteResult = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
