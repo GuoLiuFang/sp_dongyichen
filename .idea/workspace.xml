@@ -16,7 +16,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/sp_dongyichen$testRegex.coverage" NAME="testRegex Coverage Results" MODIFIED="1478686666020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/tigerjoys/dongyichen" />
-    <SUITE FILE_PATH="coverage/sp_dongyichen$chenggongdinggou.coverage" NAME="chenggongdinggou Coverage Results" MODIFIED="1481538912716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/tigerjoys/messagecontent" />
+    <SUITE FILE_PATH="coverage/sp_dongyichen$chenggongdinggou.coverage" NAME="chenggongdinggou Coverage Results" MODIFIED="1481541735391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/tigerjoys/messagecontent" />
     <SUITE FILE_PATH="coverage/sp_dongyichen$entranceMain.coverage" NAME="entranceMain Coverage Results" MODIFIED="1478068768203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/tigerjoys/dongyichen" />
     <SUITE FILE_PATH="coverage/sp_dongyichen$test.coverage" NAME="test Coverage Results" MODIFIED="1479799022490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/tigerjoys/fenlei" />
     <SUITE FILE_PATH="coverage/sp_dongyichen$scikitKmeans.coverage" NAME="scikitKmeans Coverage Results" MODIFIED="1479292147734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/tigerjoys/fenlei" />
@@ -37,15 +37,15 @@
       <file leaf-file-name="chenggongdinggou.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/chenggongdinggou.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2308">
-              <caret line="253" column="23" lean-forward="true" selection-start-line="253" selection-start-column="23" selection-end-line="253" selection-end-column="23" />
+            <state relative-caret-position="480">
+              <caret line="222" column="16" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
               <folding>
-                <marker date="1481540549000" expanded="true" signature="483:644" ph="select creat... sms_received_histories_all" />
-                <marker date="1481540549000" expanded="true" signature="1055:1245" ph="select creat... sms_received_histories_all" />
-                <marker date="1481540549000" expanded="true" signature="1658:1723" ph="select max(i... sms_received_histories_all_analysis" />
-                <marker date="1481540549000" expanded="true" signature="1827:1960" ph="select creat... sms_received_histories_all" />
-                <marker date="1481540549000" expanded="true" signature="9966:9998" ph="select id, n... sp_channels" />
-                <marker date="1481540549000" expanded="true" signature="10057:10117" ph="select id, a... charge_codes" />
+                <marker date="1481541922000" expanded="true" signature="483:644" ph="select creat... sms_received_histories_all" />
+                <marker date="1481541922000" expanded="true" signature="1055:1245" ph="select creat... sms_received_histories_all" />
+                <marker date="1481541922000" expanded="true" signature="1658:1723" ph="select max(i... sms_received_histories_all_analysis" />
+                <marker date="1481541922000" expanded="true" signature="1827:1960" ph="select creat... sms_received_histories_all" />
+                <marker date="1481541922000" expanded="true" signature="9975:10007" ph="select id, n... sp_channels" />
+                <marker date="1481541922000" expanded="true" signature="10066:10126" ph="select id, a... charge_codes" />
               </folding>
             </state>
           </provider>
@@ -54,7 +54,7 @@
       <file leaf-file-name="threading.py" pinned="false" current-in-tab="false">
         <entry file="file:///usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
+            <state relative-caret-position="9690">
               <caret line="646" column="8" lean-forward="false" selection-start-line="646" selection-start-column="8" selection-end-line="646" selection-end-column="8" />
               <folding />
             </state>
@@ -136,8 +136,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="153" />
     <option name="y" value="23" />
-    <option name="width" value="1920" />
+    <option name="width" value="1705" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -174,7 +175,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -277,7 +278,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -625,10 +626,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1057" extended-state="6" />
+    <frame x="153" y="23" width="1705" height="1057" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19166666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21583578" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -674,12 +675,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481540549000" expanded="true" signature="483:644" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="1055:1245" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="1658:1723" ph="select max(i... sms_received_histories_all_analysis" />
-            <marker date="1481540549000" expanded="true" signature="1827:1960" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="9966:9998" ph="select id, n... sp_channels" />
-            <marker date="1481540549000" expanded="true" signature="10057:10117" ph="select id, a... charge_codes" />
+            <marker date="1481541922000" expanded="true" signature="483:644" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="1055:1245" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="1658:1723" ph="select max(i... sms_received_histories_all_analysis" />
+            <marker date="1481541922000" expanded="true" signature="1827:1960" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="9975:10007" ph="select id, n... sp_channels" />
+            <marker date="1481541922000" expanded="true" signature="10066:10126" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -710,12 +711,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481540549000" expanded="true" signature="483:644" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="1055:1245" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="1658:1723" ph="select max(i... sms_received_histories_all_analysis" />
-            <marker date="1481540549000" expanded="true" signature="1827:1960" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="9966:9998" ph="select id, n... sp_channels" />
-            <marker date="1481540549000" expanded="true" signature="10057:10117" ph="select id, a... charge_codes" />
+            <marker date="1481541922000" expanded="true" signature="483:644" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="1055:1245" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="1658:1723" ph="select max(i... sms_received_histories_all_analysis" />
+            <marker date="1481541922000" expanded="true" signature="1827:1960" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="9975:10007" ph="select id, n... sp_channels" />
+            <marker date="1481541922000" expanded="true" signature="10066:10126" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -739,12 +740,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481540549000" expanded="true" signature="483:644" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="1055:1245" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="1658:1723" ph="select max(i... sms_received_histories_all_analysis" />
-            <marker date="1481540549000" expanded="true" signature="1827:1960" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="9966:9998" ph="select id, n... sp_channels" />
-            <marker date="1481540549000" expanded="true" signature="10057:10117" ph="select id, a... charge_codes" />
+            <marker date="1481541922000" expanded="true" signature="483:644" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="1055:1245" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="1658:1723" ph="select max(i... sms_received_histories_all_analysis" />
+            <marker date="1481541922000" expanded="true" signature="1827:1960" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="9975:10007" ph="select id, n... sp_channels" />
+            <marker date="1481541922000" expanded="true" signature="10066:10126" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -754,12 +755,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481540549000" expanded="true" signature="483:644" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="1055:1245" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="1658:1723" ph="select max(i... sms_received_histories_all_analysis" />
-            <marker date="1481540549000" expanded="true" signature="1827:1960" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="9966:9998" ph="select id, n... sp_channels" />
-            <marker date="1481540549000" expanded="true" signature="10057:10117" ph="select id, a... charge_codes" />
+            <marker date="1481541922000" expanded="true" signature="483:644" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="1055:1245" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="1658:1723" ph="select max(i... sms_received_histories_all_analysis" />
+            <marker date="1481541922000" expanded="true" signature="1827:1960" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="9975:10007" ph="select id, n... sp_channels" />
+            <marker date="1481541922000" expanded="true" signature="10066:10126" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -769,12 +770,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481540549000" expanded="true" signature="483:644" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="1055:1245" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="1658:1723" ph="select max(i... sms_received_histories_all_analysis" />
-            <marker date="1481540549000" expanded="true" signature="1827:1960" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="9966:9998" ph="select id, n... sp_channels" />
-            <marker date="1481540549000" expanded="true" signature="10057:10117" ph="select id, a... charge_codes" />
+            <marker date="1481541922000" expanded="true" signature="483:644" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="1055:1245" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="1658:1723" ph="select max(i... sms_received_histories_all_analysis" />
+            <marker date="1481541922000" expanded="true" signature="1827:1960" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="9975:10007" ph="select id, n... sp_channels" />
+            <marker date="1481541922000" expanded="true" signature="10066:10126" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -784,12 +785,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481540549000" expanded="true" signature="483:644" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="1055:1245" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="1658:1723" ph="select max(i... sms_received_histories_all_analysis" />
-            <marker date="1481540549000" expanded="true" signature="1827:1960" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="9966:9998" ph="select id, n... sp_channels" />
-            <marker date="1481540549000" expanded="true" signature="10057:10117" ph="select id, a... charge_codes" />
+            <marker date="1481541922000" expanded="true" signature="483:644" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="1055:1245" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="1658:1723" ph="select max(i... sms_received_histories_all_analysis" />
+            <marker date="1481541922000" expanded="true" signature="1827:1960" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="9975:10007" ph="select id, n... sp_channels" />
+            <marker date="1481541922000" expanded="true" signature="10066:10126" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -998,7 +999,7 @@
     </entry>
     <entry file="file:///usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
+        <state relative-caret-position="9690">
           <caret line="646" column="8" lean-forward="false" selection-start-line="646" selection-start-column="8" selection-end-line="646" selection-end-column="8" />
           <folding />
         </state>
@@ -1006,15 +1007,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/chenggongdinggou.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2308">
-          <caret line="253" column="23" lean-forward="true" selection-start-line="253" selection-start-column="23" selection-end-line="253" selection-end-column="23" />
+        <state relative-caret-position="480">
+          <caret line="222" column="16" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
           <folding>
-            <marker date="1481540549000" expanded="true" signature="483:644" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="1055:1245" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="1658:1723" ph="select max(i... sms_received_histories_all_analysis" />
-            <marker date="1481540549000" expanded="true" signature="1827:1960" ph="select creat... sms_received_histories_all" />
-            <marker date="1481540549000" expanded="true" signature="9966:9998" ph="select id, n... sp_channels" />
-            <marker date="1481540549000" expanded="true" signature="10057:10117" ph="select id, a... charge_codes" />
+            <marker date="1481541922000" expanded="true" signature="483:644" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="1055:1245" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="1658:1723" ph="select max(i... sms_received_histories_all_analysis" />
+            <marker date="1481541922000" expanded="true" signature="1827:1960" ph="select creat... sms_received_histories_all" />
+            <marker date="1481541922000" expanded="true" signature="9975:10007" ph="select id, n... sp_channels" />
+            <marker date="1481541922000" expanded="true" signature="10066:10126" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>

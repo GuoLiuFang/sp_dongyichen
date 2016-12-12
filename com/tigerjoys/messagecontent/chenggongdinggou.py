@@ -164,7 +164,7 @@ def badyRun(param1, param2):
     messageContent = fetchMessageAll(param1, param2)
     # messageContent = fetchMessageAll(sys.argv[1], sys.argv[2])
     # messageContent = fetchMessageAll(str(1), str(5000))
-    csvfile = open("/data/sdg/guoliufang/other_work_space/ResultCsv.txt", mode='wa+')
+    csvfile = open("/data/sdg/guoliufang/other_work_space/ResultCsv.txt" + param1, mode='wa+')
     # csvfile = open("/Users/LiuFangGuo/Downloads/ResultCsv.txt", mode='wa+')
     csvlist = []
     for index in range(len(messageContent)):
@@ -241,13 +241,14 @@ executor.execute("""select id, amount, name, dest_number, code from charge_codes
 charge_codes = executor.fetchall()
 wsdl_url = """http://panda.didiman.com:82/Panda/LocationWebService?wsdl"""
 client = Client(wsdl_url)
-for i in range(10000001, 140000000, 10000000):
+for i in range(1, 140000000, 10000000):
     threadList = []
-    for j in range(1, i - 1, 100000):
+    for j in range(i, i + 10000000 - 1, 100000):
         start = j
         end = 100000 + j - 1
+        print "开始，结束", start, end
         threadList.append(threading.Thread(target=badyRun(start, end)))
-    # print "*"*100
+    print "*" * 100
     for t in threadList:
         t.setDaemon(True)
         t.start()
