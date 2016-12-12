@@ -13,7 +13,7 @@ def fetchMessageAll(start, end):
                                         use_unicode=True, port=5209, charset='utf8')
     messageExecutor = dbConenectMessage.cursor()
     messageExecutor.execute(
-        """select create_time,uuid,content,id,sc,rimsi from honeycomb.sms_received_histories_all where content is not null and id BETWEEN """ + start + """ and """ + end)
+        """select create_time,uuid,content,id,sc,rimsi,record_time from honeycomb.sms_received_histories_all where content is not null and id BETWEEN """ + start + """ and """ + end)
     messageContent = messageExecutor.fetchall()
     return messageContent
 
@@ -23,7 +23,7 @@ def fetchMessageByDay(day):
                                         use_unicode=True, port=5209, charset='utf8')
     messageExecutor = dbConenectMessage.cursor()
     dayEnd = day + " 23:59:59"
-    sql = """select create_time,uuid,content,id,sc,rimsi from honeycomb.sms_received_histories_all where content is not null and create_time BETWEEN '""" + day + """' and '""" + dayEnd + """'"""
+    sql = """select create_time,uuid,content,id,sc,rimsi,record_time from honeycomb.sms_received_histories_all where content is not null and create_time BETWEEN '""" + day + """' and '""" + dayEnd + """'"""
     messageExecutor.execute(sql)
     messageContent = messageExecutor.fetchall()
     return messageContent
@@ -36,7 +36,7 @@ def fetchMessageById():
     sql_get_max_id = """select max(id) from honeycomb.sms_received_histories_all_analysis"""
     messageExecutor.execute(sql_get_max_id)
     max_id = messageExecutor.fetchone()[0]
-    sql = """select create_time,uuid,content,id,sc,rimsi from honeycomb.sms_received_histories_all where content is not null and id > """ + str(
+    sql = """select create_time,uuid,content,id,sc,rimsi,record_time from honeycomb.sms_received_histories_all where content is not null and id > """ + str(
         max_id)
     messageExecutor.execute(sql)
     messageContent = messageExecutor.fetchall()
@@ -185,7 +185,8 @@ for index in range(len(messageContent)):
         csvlist.append(
             (
                 messageContent[index][0], messageContent[index][1], messageContent[index][2], messageContent[index][3],
-                messageContent[index][4], messageContent[index][5], proCity[0], proCity[1], proCity[2], proCity[3],
+                messageContent[index][4], messageContent[index][5], messageContent[index][6], proCity[0], proCity[1],
+                proCity[2], proCity[3],
                 proCity[4], proCity[5], proCity[6],
                 -11,
                 -1, -1, -1, -1, -1, -1, -1, -1, -1))
@@ -198,7 +199,8 @@ for index in range(len(messageContent)):
                 # -13代表没有合适的 sp_name 和 charge_code 组合
                 csvlist.append((
                     messageContent[index][0], messageContent[index][1], messageContent[index][2],
-                    messageContent[index][3], messageContent[index][4], messageContent[index][5], proCity[0],
+                    messageContent[index][3], messageContent[index][4], messageContent[index][5],
+                    messageContent[index][6], proCity[0],
                     proCity[1], proCity[2], proCity[3], proCity[4], proCity[5], proCity[6], -13, -1, -1,
                     -1, -1, -1, -1, -1, -1, -1))
                 continue
@@ -206,14 +208,16 @@ for index in range(len(messageContent)):
                 for i in sp_name:
                     csvlist.append((
                         messageContent[index][0], messageContent[index][1], messageContent[index][2],
-                        messageContent[index][3], messageContent[index][4], messageContent[index][5], proCity[0],
+                        messageContent[index][3], messageContent[index][4], messageContent[index][5],
+                        messageContent[index][6], proCity[0],
                         proCity[1], proCity[2], proCity[3], proCity[4], proCity[5], proCity[6], status,
                         i[0], i[1], i[2], i[3], i[4], i[5], i[6], i[7], i[8]))
         else:
             # -12代表虽然包含了完成时，但是仍然不是要找的3个类别中的东西
             csvlist.append((
                 messageContent[index][0], messageContent[index][1], messageContent[index][2], messageContent[index][3],
-                messageContent[index][4], messageContent[index][5], proCity[0], proCity[1], proCity[2], proCity[3],
+                messageContent[index][4], messageContent[index][5], messageContent[index][6], proCity[0], proCity[1],
+                proCity[2], proCity[3],
                 proCity[4], proCity[5], proCity[6],
                 -12, -1, -1, -1,
                 -1, -1, -1, -1, -1, -1))
