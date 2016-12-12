@@ -96,7 +96,7 @@ def getSpName(message):
             if ch_code == -1:
                 continue
             else:
-                if (ChargeCodeInSpNames(ch_code[3])) or (sp_name in sp_name_list):
+                if (ChargeCodeInSpNames(ch_code[6])) or (sp_name in sp_name_list):
                     continue
                 else:
                     sp_name_list.append(sp_name)
