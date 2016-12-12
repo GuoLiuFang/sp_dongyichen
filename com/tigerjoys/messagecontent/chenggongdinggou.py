@@ -6,6 +6,8 @@ sys.setdefaultencoding('utf-8')
 import MySQLdb
 import re
 from suds.client import Client
+import threading
+import time
 
 
 def fetchMessageAll(start, end):
@@ -155,6 +157,80 @@ def getProCity(sc, rimsi):
     return (city_id, city_name, city_pro_id, operator_id, operator_name, province_name, province_id)
 
 
+def badyRun(param1, param2):
+    # messageContent = fetchMessageByDay(sys.argv[1])
+    # messageContent = fetchMessageByDay('2016-10-01')
+    # messageContent = fetchMessageById()
+    messageContent = fetchMessageAll(param1, param2)
+    # messageContent = fetchMessageAll(sys.argv[1], sys.argv[2])
+    # messageContent = fetchMessageAll(str(1), str(5000))
+    csvfile = open("/data/sdg/guoliufang/other_work_space/ResultCsv.txt", mode='wa+')
+    # csvfile = open("/Users/LiuFangGuo/Downloads/ResultCsv.txt", mode='wa+')
+    csvlist = []
+    for index in range(len(messageContent)):
+        message = messageContent[index][2].encode(encoding='utf-8')
+        # message = """(1/2)您已成功定制联通宽带在线有限公司5575(10655575102)的10元给力付包月业务，发送TD10到10655575102退订"""
+        sc = messageContent[index][4]
+        rimsi = messageContent[index][5]
+        proCity = getProCity(sc, rimsi)
+        isValid = getValidMessage(message)
+        if not isValid:
+            # -11代表不包含完成时的状态关键字
+            csvlist.append(
+                (
+                    messageContent[index][0], messageContent[index][1], messageContent[index][2],
+                    messageContent[index][3],
+                    messageContent[index][4], messageContent[index][5], messageContent[index][6], proCity[0],
+                    proCity[1],
+                    proCity[2], proCity[3],
+                    proCity[4], proCity[5], proCity[6],
+                    -11,
+                    -1, -1, -1, -1, -1, -1, -1, -1, -1))
+            continue
+        else:
+            status = getStatus(message)
+            if status > -1:
+                sp_name = getSpName(message)
+                if sp_name == -1:
+                    # -13代表没有合适的 sp_name 和 charge_code 组合
+                    csvlist.append((
+                        messageContent[index][0], messageContent[index][1], messageContent[index][2],
+                        messageContent[index][3], messageContent[index][4], messageContent[index][5],
+                        messageContent[index][6], proCity[0],
+                        proCity[1], proCity[2], proCity[3], proCity[4], proCity[5], proCity[6], -13, -1, -1,
+                        -1, -1, -1, -1, -1, -1, -1))
+                    continue
+                else:
+                    for i in sp_name:
+                        csvlist.append((
+                            messageContent[index][0], messageContent[index][1], messageContent[index][2],
+                            messageContent[index][3], messageContent[index][4], messageContent[index][5],
+                            messageContent[index][6], proCity[0],
+                            proCity[1], proCity[2], proCity[3], proCity[4], proCity[5], proCity[6], status,
+                            i[0], i[1], i[2], i[3], i[4], i[5], i[6], i[7], i[8]))
+            else:
+                # -12代表虽然包含了完成时，但是仍然不是要找的3个类别中的东西
+                csvlist.append((
+                    messageContent[index][0], messageContent[index][1], messageContent[index][2],
+                    messageContent[index][3],
+                    messageContent[index][4], messageContent[index][5], messageContent[index][6], proCity[0],
+                    proCity[1],
+                    proCity[2], proCity[3],
+                    proCity[4], proCity[5], proCity[6],
+                    -12, -1, -1, -1,
+                    -1, -1, -1, -1, -1, -1))
+                continue
+    # write list
+    # dbWriteResult = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
+    #                                 use_unicode=True, port=5209, charset='utf8')
+    # resultExecutor = dbWriteResult.cursor()
+    for record in csvlist:
+        csvfile.write('|'.join(str(e) for e in record) + "\n")
+        # sql = 'INSERT INTO honeycomb.sms_received_histories_all_clearing VALUES (%s)' %var_string
+        # print sql
+        # resultExecutor.execute(sql)
+
+
 # ---从这里开始是 main 函数入口
 dbConenectReference = MySQLdb.connect(host='192.168.12.66', user='tigerreport', passwd='titmds4sp',
                                       db='TigerReport_production', use_unicode=True, charset='utf8')
@@ -163,71 +239,16 @@ executor.execute("""select id, name from sp_channels""")
 sp_channels = executor.fetchall()
 executor.execute("""select id, amount, name, dest_number, code from charge_codes""")
 charge_codes = executor.fetchall()
-# messageContent = fetchMessageByDay(sys.argv[1])
-# messageContent = fetchMessageByDay('2016-10-01')
-# messageContent = fetchMessageById()
-messageContent = fetchMessageAll(sys.argv[1], sys.argv[2])
-# messageContent = fetchMessageAll(str(1), str(5000))
-csvfile = open("/data/sdg/guoliufang/other_work_space/ResultCsv.txt", mode='wa+')
-# csvfile = open("/Users/LiuFangGuo/Downloads/ResultCsv.txt", mode='wa+')
-csvlist = []
 wsdl_url = """http://panda.didiman.com:82/Panda/LocationWebService?wsdl"""
 client = Client(wsdl_url)
-for index in range(len(messageContent)):
-    message = messageContent[index][2].encode(encoding='utf-8')
-    # message = """(1/2)您已成功定制联通宽带在线有限公司5575(10655575102)的10元给力付包月业务，发送TD10到10655575102退订"""
-    sc = messageContent[index][4]
-    rimsi = messageContent[index][5]
-    proCity = getProCity(sc, rimsi)
-    isValid = getValidMessage(message)
-    if not isValid:
-        # -11代表不包含完成时的状态关键字
-        csvlist.append(
-            (
-                messageContent[index][0], messageContent[index][1], messageContent[index][2], messageContent[index][3],
-                messageContent[index][4], messageContent[index][5], messageContent[index][6], proCity[0], proCity[1],
-                proCity[2], proCity[3],
-                proCity[4], proCity[5], proCity[6],
-                -11,
-                -1, -1, -1, -1, -1, -1, -1, -1, -1))
-        continue
-    else:
-        status = getStatus(message)
-        if status > -1:
-            sp_name = getSpName(message)
-            if sp_name == -1:
-                # -13代表没有合适的 sp_name 和 charge_code 组合
-                csvlist.append((
-                    messageContent[index][0], messageContent[index][1], messageContent[index][2],
-                    messageContent[index][3], messageContent[index][4], messageContent[index][5],
-                    messageContent[index][6], proCity[0],
-                    proCity[1], proCity[2], proCity[3], proCity[4], proCity[5], proCity[6], -13, -1, -1,
-                    -1, -1, -1, -1, -1, -1, -1))
-                continue
-            else:
-                for i in sp_name:
-                    csvlist.append((
-                        messageContent[index][0], messageContent[index][1], messageContent[index][2],
-                        messageContent[index][3], messageContent[index][4], messageContent[index][5],
-                        messageContent[index][6], proCity[0],
-                        proCity[1], proCity[2], proCity[3], proCity[4], proCity[5], proCity[6], status,
-                        i[0], i[1], i[2], i[3], i[4], i[5], i[6], i[7], i[8]))
-        else:
-            # -12代表虽然包含了完成时，但是仍然不是要找的3个类别中的东西
-            csvlist.append((
-                messageContent[index][0], messageContent[index][1], messageContent[index][2], messageContent[index][3],
-                messageContent[index][4], messageContent[index][5], messageContent[index][6], proCity[0], proCity[1],
-                proCity[2], proCity[3],
-                proCity[4], proCity[5], proCity[6],
-                -12, -1, -1, -1,
-                -1, -1, -1, -1, -1, -1))
-            continue
-# write list
-# dbWriteResult = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
-#                                 use_unicode=True, port=5209, charset='utf8')
-# resultExecutor = dbWriteResult.cursor()
-for record in csvlist:
-    csvfile.write('|'.join(str(e) for e in record) + "\n")
-    # sql = 'INSERT INTO honeycomb.sms_received_histories_all_clearing VALUES (%s)' %var_string
-    # print sql
-    # resultExecutor.execute(sql)
+for i in range(10000001, 140000000, 10000000):
+    threadList = []
+    for j in range(1, i - 1, 100000):
+        start = j
+        end = 100000 + j - 1
+        threadList.append(threading.Thread(target=badyRun(start, end)))
+    # print "*"*100
+    for t in threadList:
+        t.setDaemon(True)
+        t.start()
+    time.sleep(25 * 60)
