@@ -137,9 +137,9 @@ def getProCity(sc, rimsi):
     province_name = -1
     province_id = -1
     if not str(sc).isdigit():
-        sc = ''
+        sc = '0'
     if not str(rimsi).isdigit():
-        rimsi = ''
+        rimsi = '0'
     if str(sc) or str(rimsi):
         result = client.service.locate1(sc, rimsi)
         if result is not None:
@@ -175,9 +175,9 @@ def badyRun(param1, param2):
         sc = messageContent[index][4]
         rimsi = messageContent[index][5]
         if sc is None:
-            sc = ''
+            sc = '0'
         if rimsi is None:
-            rimsi = ''
+            rimsi = '0'
         proCity = getProCity(sc, rimsi)
         isValid = getValidMessage(message)
         if not isValid:
