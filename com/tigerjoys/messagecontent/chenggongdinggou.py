@@ -31,18 +31,18 @@ def fetchMessageByDay(day):
     return messageContent
 
 
-def fetchMessageById():
+def fetchMaxMinId():
     dbConenectMessage = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
                                         use_unicode=True, port=5209, charset='utf8')
     messageExecutor = dbConenectMessage.cursor()
-    sql_get_max_id = """select max(id) from honeycomb.sms_received_histories_all_analysis"""
+    sql_get_max_id = """select max(id) from honeycomb.sms_received_histories_all"""
     messageExecutor.execute(sql_get_max_id)
     max_id = messageExecutor.fetchone()[0]
-    sql = """select create_time,uuid,content,id,sc,rimsi,record_time from honeycomb.sms_received_histories_all where content is not null and id > """ + str(
-        max_id)
-    messageExecutor.execute(sql)
-    messageContent = messageExecutor.fetchall()
-    return messageContent
+    sql_get_min_id = """select max(id) from honeycomb.sms_received_histories_all_thread"""
+    messageExecutor.execute(sql_get_min_id)
+    min_id = messageExecutor.fetchone()[0]
+
+    return (min_id, max_id)
 
 
 def getValidMessage(message):
@@ -174,6 +174,10 @@ def badyRun(param1, param2):
         # message = """(1/2)您已成功定制联通宽带在线有限公司5575(10655575102)的10元给力付包月业务，发送TD10到10655575102退订"""
         sc = messageContent[index][4]
         rimsi = messageContent[index][5]
+        if sc is None:
+            sc = ''
+        if rimsi is None:
+            rimsi = ''
         proCity = getProCity(sc, rimsi)
         isValid = getValidMessage(message)
         if not isValid:
