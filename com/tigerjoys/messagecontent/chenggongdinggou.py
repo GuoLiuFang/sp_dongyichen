@@ -142,18 +142,19 @@ def getProCity(sc, rimsi):
         rimsi = ''
     if str(sc) or str(rimsi):
         result = client.service.locate1(sc, rimsi)
-        if hasattr(result.result, 'cities'):
-            city_id = result.result.cities[0].id
-            city_name = result.result.cities[0].name
-            city_pro_id = result.result.cities[0].province_id
-        operator_id = result.result.operator.id
-        if hasattr(result.result.operator, 'name'):
-            operator_name = result.result.operator.name
-        if hasattr(result.result, 'province'):
-            if hasattr(result.result.province, 'name'):
-                province_name = result.result.province.name
-            if hasattr(result.result.province, 'id'):
-                province_id = result.result.province.id
+        if result is not None:
+            if hasattr(result.result, 'cities'):
+                city_id = result.result.cities[0].id
+                city_name = result.result.cities[0].name
+                city_pro_id = result.result.cities[0].province_id
+            operator_id = result.result.operator.id
+            if hasattr(result.result.operator, 'name'):
+                operator_name = result.result.operator.name
+            if hasattr(result.result, 'province'):
+                if hasattr(result.result.province, 'name'):
+                    province_name = result.result.province.name
+                if hasattr(result.result.province, 'id'):
+                    province_id = result.result.province.id
     return (city_id, city_name, city_pro_id, operator_id, operator_name, province_name, province_id)
 
 
@@ -172,11 +173,7 @@ def badyRun(param1, param2):
         message = messageContent[index][2].encode(encoding='utf-8')
         # message = """(1/2)您已成功定制联通宽带在线有限公司5575(10655575102)的10元给力付包月业务，发送TD10到10655575102退订"""
         sc = messageContent[index][4]
-        if sc is None:
-            sc = ''
         rimsi = messageContent[index][5]
-        if rimsi is None:
-            rimsi = ''
         proCity = getProCity(sc, rimsi)
         isValid = getValidMessage(message)
         if not isValid:
