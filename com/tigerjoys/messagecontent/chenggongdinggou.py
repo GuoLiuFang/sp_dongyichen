@@ -158,6 +158,7 @@ def getProCity(sc, rimsi):
 
 
 def badyRun(param1, param2):
+    print "线程开始执行", param1, param2
     # messageContent = fetchMessageByDay(sys.argv[1])
     # messageContent = fetchMessageByDay('2016-10-01')
     # messageContent = fetchMessageById()
@@ -171,7 +172,11 @@ def badyRun(param1, param2):
         message = messageContent[index][2].encode(encoding='utf-8')
         # message = """(1/2)您已成功定制联通宽带在线有限公司5575(10655575102)的10元给力付包月业务，发送TD10到10655575102退订"""
         sc = messageContent[index][4]
+        if sc is None:
+            sc = ''
         rimsi = messageContent[index][5]
+        if rimsi is None:
+            rimsi = ''
         proCity = getProCity(sc, rimsi)
         isValid = getValidMessage(message)
         if not isValid:
@@ -229,6 +234,7 @@ def badyRun(param1, param2):
         # sql = 'INSERT INTO honeycomb.sms_received_histories_all_clearing VALUES (%s)' %var_string
         # print sql
         # resultExecutor.execute(sql)
+    print "线程执行结束", param1, param2
 
 
 # ---从这里开始是 main 函数入口
