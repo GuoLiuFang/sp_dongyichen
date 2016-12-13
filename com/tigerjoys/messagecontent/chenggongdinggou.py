@@ -246,10 +246,11 @@ for i in range(1, 140000000, 10000000):
     for j in range(i, i + 10000000 - 1, 100000):
         start = j
         end = 100000 + j - 1
-        print "开始，结束", start, end
-        threadList.append(threading.Thread(target=badyRun(str(start), str(end))))
-    print "*" * 100
+        # print "开始，结束", start, end
+        threadList.append(threading.Thread(target=badyRun, args=(str(start), str(end))))
+    # print "*" * 100
     for t in threadList:
         t.setDaemon(True)
         t.start()
-    time.sleep(25 * 60)
+    for t in threadList:
+        t.join()
