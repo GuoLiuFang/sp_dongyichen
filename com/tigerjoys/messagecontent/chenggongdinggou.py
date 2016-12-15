@@ -141,7 +141,10 @@ def getProCity(sc, rimsi):
     if not str(rimsi).isdigit():
         rimsi = '0'
     if str(sc) or str(rimsi):
-        result = client.service.locate1(sc, rimsi)
+        try:
+            result = client.service.locate1(sc, rimsi)
+        except Exception as exxx:
+            print "sc看看什么样子 rimsi",sc,rimsi,"看看那个什么是什么杨I",exxx
         if result is not None:
             if hasattr(result.result, 'cities'):
                 city_id = result.result.cities[0].id
