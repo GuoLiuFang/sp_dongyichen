@@ -31,18 +31,18 @@ def fetchMessageByDay(day):
     return messageContent
 
 
-def fetchMessageById():
+def fetchMaxMinId():
     dbConenectMessage = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
                                         use_unicode=True, port=5209, charset='utf8')
     messageExecutor = dbConenectMessage.cursor()
-    sql_get_max_id = """select max(id) from honeycomb.sms_received_histories_all_analysis"""
+    sql_get_max_id = """select max(id) from honeycomb.sms_received_histories_all"""
     messageExecutor.execute(sql_get_max_id)
     max_id = messageExecutor.fetchone()[0]
-    sql = """select create_time,uuid,content,id,sc,rimsi,record_time from honeycomb.sms_received_histories_all where content is not null and id > """ + str(
-        max_id)
-    messageExecutor.execute(sql)
-    messageContent = messageExecutor.fetchall()
-    return messageContent
+    sql_get_min_id = """select max(id) from honeycomb.sms_received_histories_all_thread"""
+    messageExecutor.execute(sql_get_min_id)
+    min_id = messageExecutor.fetchone()[0]
+
+    return (min_id, max_id)
 
 
 def getValidMessage(message):
@@ -137,27 +137,29 @@ def getProCity(sc, rimsi):
     province_name = -1
     province_id = -1
     if not str(sc).isdigit():
-        sc = ''
+        sc = '0'
     if not str(rimsi).isdigit():
-        rimsi = ''
+        rimsi = '0'
     if str(sc) or str(rimsi):
         result = client.service.locate1(sc, rimsi)
-        if hasattr(result.result, 'cities'):
-            city_id = result.result.cities[0].id
-            city_name = result.result.cities[0].name
-            city_pro_id = result.result.cities[0].province_id
-        operator_id = result.result.operator.id
-        if hasattr(result.result.operator, 'name'):
-            operator_name = result.result.operator.name
-        if hasattr(result.result, 'province'):
-            if hasattr(result.result.province, 'name'):
-                province_name = result.result.province.name
-            if hasattr(result.result.province, 'id'):
-                province_id = result.result.province.id
+        if result is not None:
+            if hasattr(result.result, 'cities'):
+                city_id = result.result.cities[0].id
+                city_name = result.result.cities[0].name
+                city_pro_id = result.result.cities[0].province_id
+            operator_id = result.result.operator.id
+            if hasattr(result.result.operator, 'name'):
+                operator_name = result.result.operator.name
+            if hasattr(result.result, 'province'):
+                if hasattr(result.result.province, 'name'):
+                    province_name = result.result.province.name
+                if hasattr(result.result.province, 'id'):
+                    province_id = result.result.province.id
     return (city_id, city_name, city_pro_id, operator_id, operator_name, province_name, province_id)
 
 
 def badyRun(param1, param2):
+    print "线程开始执行", param1, param2
     # messageContent = fetchMessageByDay(sys.argv[1])
     # messageContent = fetchMessageByDay('2016-10-01')
     # messageContent = fetchMessageById()
@@ -232,6 +234,7 @@ def badyRun(param1, param2):
         # sql = 'INSERT INTO honeycomb.sms_received_histories_all_clearing VALUES (%s)' %var_string
         # print sql
         # resultExecutor.execute(sql)
+    print "线程执行结束", param1, param2
 
 
 # ---从这里开始是 main 函数入口
