@@ -247,6 +247,10 @@ executor.execute("""select id, amount, name, dest_number, code from charge_codes
 charge_codes = executor.fetchall()
 wsdl_url = """http://panda.didiman.com:82/Panda/LocationWebService?wsdl"""
 client = Client(wsdl_url)
+# sc=8613800635500
+# rimsi=460021658079245
+# testResult = getProCity(sc,rimsi)
+# print testResult
 for i in range(1, 140000000, 10000000):
     threadList = []
     for j in range(i, i + 10000000 - 1, 100000):
