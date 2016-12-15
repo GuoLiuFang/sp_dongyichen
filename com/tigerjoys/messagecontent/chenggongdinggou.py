@@ -172,7 +172,10 @@ def badyRun(param1, param2):
         # message = """(1/2)您已成功定制联通宽带在线有限公司5575(10655575102)的10元给力付包月业务，发送TD10到10655575102退订"""
         sc = messageContent[index][4]
         rimsi = messageContent[index][5]
-        proCity = getProCity(sc, rimsi)
+        try:
+            proCity = getProCity(sc, rimsi)
+        except Exception as exx:
+            print "在 id 什么的位置发生了什么什么错误", messageContent[index][3], "前面是id 后面是异常的内容", exx
         isValid = getValidMessage(message)
         if not isValid:
             # -11代表不包含完成时的状态关键字
