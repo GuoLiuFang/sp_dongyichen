@@ -7,7 +7,6 @@ import MySQLdb
 import re
 from suds.client import Client
 import threading
-import time
 
 
 def fetchMessageAll(start, end):
@@ -16,17 +15,6 @@ def fetchMessageAll(start, end):
     messageExecutor = dbConenectMessage.cursor()
     messageExecutor.execute(
         """select create_time,uuid,content,id,sc,rimsi,record_time from honeycomb.sms_received_histories_all where content is not null and id BETWEEN """ + start + """ and """ + end)
-    messageContent = messageExecutor.fetchall()
-    return messageContent
-
-
-def fetchMessageByDay(day):
-    dbConenectMessage = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
-                                        use_unicode=True, port=5209, charset='utf8')
-    messageExecutor = dbConenectMessage.cursor()
-    dayEnd = day + " 23:59:59"
-    sql = """select create_time,uuid,content,id,sc,rimsi,record_time from honeycomb.sms_received_histories_all where content is not null and create_time BETWEEN '""" + day + """' and '""" + dayEnd + """'"""
-    messageExecutor.execute(sql)
     messageContent = messageExecutor.fetchall()
     return messageContent
 
@@ -41,7 +29,6 @@ def fetchMaxMinId():
     sql_get_min_id = """select max(id) from honeycomb.sms_received_histories_all_thread"""
     messageExecutor.execute(sql_get_min_id)
     min_id = messageExecutor.fetchone()[0]
-
     return (min_id, max_id)
 
 
@@ -163,17 +150,12 @@ def badyRun(param1, param2):
     print "线程开始执行", param1, param2
     messageContent = fetchMessageAll(param1, param2)
     csvfile = open("/data/sdg/guoliufang/other_work_space/ResultCsv.txt" + param1, mode='wa+')
-    # csvfile = open("/Users/LiuFangGuo/Downloads/ResultCsv.txt", mode='wa+')
+    csvlist = []
     for index in range(len(messageContent)):
-        csvlist = []
         message = messageContent[index][2].encode(encoding='utf-8')
-        # message = """(1/2)您已成功定制联通宽带在线有限公司5575(10655575102)的10元给力付包月业务，发送TD10到10655575102退订"""
         sc = messageContent[index][4]
         rimsi = messageContent[index][5]
-        try:
-            proCity = getProCity(sc, rimsi)
-        except Exception as exx:
-            print "在 id 什么的位置发生了什么什么错误", messageContent[index][3], "前面是id 后面是异常的内容", exx
+        proCity = getProCity(sc, rimsi)
         isValid = getValidMessage(message)
         if not isValid:
             # -11代表不包含完成时的状态关键字
@@ -225,6 +207,7 @@ def badyRun(param1, param2):
             for record in csvlist:
                 csvfile.write('|'.join(str(e) for e in record) + "\n")
             csvlist = []
+            print "成功写入100条当前 id ", index
     print "线程执行结束", param1, param2
 
 
@@ -241,9 +224,7 @@ for i in range(1, 140000000, 10000000):
     for j in range(i, i + 10000000 - 1, 100000):
         start = j
         end = 100000 + j - 1
-        # print "开始，结束", start, end
         threadList.append(threading.Thread(target=badyRun, args=(str(start), str(end))))
-    # print "*" * 100
     for t in threadList:
         t.setDaemon(True)
         t.start()
