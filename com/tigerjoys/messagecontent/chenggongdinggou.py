@@ -140,39 +140,32 @@ def getProCity(sc, rimsi):
         sc = '0'
     if not str(rimsi).isdigit():
         rimsi = '0'
+    wsdl_url = """http://panda.didiman.com:82/Panda/LocationWebService?wsdl"""
+    client = Client(wsdl_url)
     if str(sc) or str(rimsi):
-        try:
-            result = client.service.locate1(sc, rimsi)
-        except Exception as exxx:
-            print "sc看看什么样子 rimsi",sc,rimsi,"看看那个什么是什么杨I",exxx
-        if result is not None:
-            if hasattr(result.result, 'cities'):
-                city_id = result.result.cities[0].id
-                city_name = result.result.cities[0].name
-                city_pro_id = result.result.cities[0].province_id
-            operator_id = result.result.operator.id
-            if hasattr(result.result.operator, 'name'):
-                operator_name = result.result.operator.name
-            if hasattr(result.result, 'province'):
-                if hasattr(result.result.province, 'name'):
-                    province_name = result.result.province.name
-                if hasattr(result.result.province, 'id'):
-                    province_id = result.result.province.id
+        result = client.service.locate1(sc, rimsi)
+        if hasattr(result.result, 'cities'):
+            city_id = result.result.cities[0].id
+            city_name = result.result.cities[0].name
+            city_pro_id = result.result.cities[0].province_id
+        operator_id = result.result.operator.id
+        if hasattr(result.result.operator, 'name'):
+            operator_name = result.result.operator.name
+        if hasattr(result.result, 'province'):
+            if hasattr(result.result.province, 'name'):
+                province_name = result.result.province.name
+            if hasattr(result.result.province, 'id'):
+                province_id = result.result.province.id
     return (city_id, city_name, city_pro_id, operator_id, operator_name, province_name, province_id)
 
 
 def badyRun(param1, param2):
     print "线程开始执行", param1, param2
-    # messageContent = fetchMessageByDay(sys.argv[1])
-    # messageContent = fetchMessageByDay('2016-10-01')
-    # messageContent = fetchMessageById()
     messageContent = fetchMessageAll(param1, param2)
-    # messageContent = fetchMessageAll(sys.argv[1], sys.argv[2])
-    # messageContent = fetchMessageAll(str(1), str(5000))
     csvfile = open("/data/sdg/guoliufang/other_work_space/ResultCsv.txt" + param1, mode='wa+')
     # csvfile = open("/Users/LiuFangGuo/Downloads/ResultCsv.txt", mode='wa+')
-    csvlist = []
     for index in range(len(messageContent)):
+        csvlist = []
         message = messageContent[index][2].encode(encoding='utf-8')
         # message = """(1/2)您已成功定制联通宽带在线有限公司5575(10655575102)的10元给力付包月业务，发送TD10到10655575102退订"""
         sc = messageContent[index][4]
@@ -228,15 +221,10 @@ def badyRun(param1, param2):
                     -12, -1, -1, -1,
                     -1, -1, -1, -1, -1, -1))
                 continue
-    # write list
-    # dbWriteResult = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
-    #                                 use_unicode=True, port=5209, charset='utf8')
-    # resultExecutor = dbWriteResult.cursor()
-    for record in csvlist:
-        csvfile.write('|'.join(str(e) for e in record) + "\n")
-        # sql = 'INSERT INTO honeycomb.sms_received_histories_all_clearing VALUES (%s)' %var_string
-        # print sql
-        # resultExecutor.execute(sql)
+        if len(csvlist) == 100:
+            for record in csvlist:
+                csvfile.write('|'.join(str(e) for e in record) + "\n")
+            csvlist = []
     print "线程执行结束", param1, param2
 
 
@@ -248,12 +236,6 @@ executor.execute("""select id, name from sp_channels""")
 sp_channels = executor.fetchall()
 executor.execute("""select id, amount, name, dest_number, code from charge_codes""")
 charge_codes = executor.fetchall()
-wsdl_url = """http://panda.didiman.com:82/Panda/LocationWebService?wsdl"""
-client = Client(wsdl_url)
-# sc=8613800635500
-# rimsi=460021658079245
-# testResult = getProCity(sc,rimsi)
-# print testResult
 for i in range(1, 140000000, 10000000):
     threadList = []
     for j in range(i, i + 10000000 - 1, 100000):
