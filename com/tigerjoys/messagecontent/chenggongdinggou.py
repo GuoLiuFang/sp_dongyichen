@@ -193,12 +193,5 @@ for index in range(len(messageContent)):
                 -12, -1, -1, -1,
                 -1, -1, -1, -1, -1, -1))
             continue
-# write list
-# dbWriteResult = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
-#                                 use_unicode=True, port=5209, charset='utf8')
-# resultExecutor = dbWriteResult.cursor()
 for record in csvlist:
     csvfile.write('|'.join(str(e) for e in record) + "\n")
-    # sql = 'INSERT INTO honeycomb.sms_received_histories_all_clearing VALUES (%s)' %var_string
-    # print sql
-    # resultExecutor.execute(sql)

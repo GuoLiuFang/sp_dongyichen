@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22c28c5b-827b-4464-8dd7-f5c0a0b77052" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sp_dongyichen.iml" afterPath="$PROJECT_DIR$/.idea/sp_dongyichen.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/com/tigerjoys/messagecontent/dbo.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/com/tigerjoys/messagecontent/tuiding.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/tigerjoys/messagecontent/chenggongdinggou.py" afterPath="$PROJECT_DIR$/com/tigerjoys/messagecontent/chenggongdinggou.py" />
     </list>
@@ -31,36 +31,27 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="chenggongdinggou.py" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/chenggongdinggou.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="1537">
-                    <caret line="141" column="32" lean-forward="false" selection-start-line="141" selection-start-column="32" selection-end-line="141" selection-end-column="32" />
-                    <folding>
-                      <marker date="1481814520000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
-                      <marker date="1481814520000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
-                      <marker date="1481814520000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="sp_dongyichen" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="chenggongdinggou.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/chenggongdinggou.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="472">
+              <caret line="193" column="40" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+              <folding>
+                <marker date="1481814954000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
+                <marker date="1481814954000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
+                <marker date="1481814954000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -68,25 +59,6 @@
         <option value="Python Script" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>sms_zthy_analysis</find>
-      <find>content</find>
-      <find>messageContent[index][2],</find>
-      <find>create_time,uuid,content,id</find>
-      <find>,messageContent[index][5]</find>
-      <find>sc,rimsi</find>
-      <find>messageContent[index][5],</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>content, id</replace>
-      <replace>messageContent[index][2],messageContent[index][3],</replace>
-      <replace>create_time,uuid,content,id,sc,rimsi</replace>
-      <replace>,messageContent[index][5],proCity[0],proCity[1],proCity[2],proCity[3],proCity[4],proCity[5],proCity[6]</replace>
-      <replace>sc,rimsi,record_time</replace>
-      <replace>messageContent[index][5],messageContent[index][6],</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -115,28 +87,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="44" />
+    <option name="y" value="90" />
     <option name="width" value="1366" />
     <option name="height" value="741" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>Python</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>AngularJS</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -157,11 +111,11 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sp_dongyichen" />
+              <option name="myItemId" value="danxianchen" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sp_dongyichen" />
+              <option name="myItemId" value="danxianchen" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -171,11 +125,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sp_dongyichen" />
+              <option name="myItemId" value="danxianchen" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sp_dongyichen" />
+              <option name="myItemId" value="danxianchen" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -189,11 +143,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sp_dongyichen" />
+              <option name="myItemId" value="danxianchen" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sp_dongyichen" />
+              <option name="myItemId" value="danxianchen" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -206,50 +160,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="messagecontent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sp_dongyichen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sp_dongyichen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tigerjoys" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kmeans" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sp_dongyichen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sp_dongyichen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tigerjoys" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dongyichen" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -590,9 +500,6 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="22c28c5b-827b-4464-8dd7-f5c0a0b77052" name="Default" comment="" />
@@ -604,7 +511,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1366" height="741" extended-state="1" />
+    <frame x="44" y="90" width="1366" height="741" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19410875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -630,14 +537,6 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
   </component>
-  <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USER_GROUPS">
-      <collection />
-    </option>
-    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-      <collection />
-    </option>
-  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -653,9 +552,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481814520000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
-            <marker date="1481814520000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
-            <marker date="1481814520000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
+            <marker date="1481814954000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
+            <marker date="1481814954000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
+            <marker date="1481814954000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -665,9 +564,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481814520000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
-            <marker date="1481814520000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
-            <marker date="1481814520000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
+            <marker date="1481814954000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
+            <marker date="1481814954000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
+            <marker date="1481814954000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -698,9 +597,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481814520000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
-            <marker date="1481814520000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
-            <marker date="1481814520000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
+            <marker date="1481814954000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
+            <marker date="1481814954000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
+            <marker date="1481814954000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -724,9 +623,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481814520000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
-            <marker date="1481814520000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
-            <marker date="1481814520000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
+            <marker date="1481814954000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
+            <marker date="1481814954000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
+            <marker date="1481814954000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -736,9 +635,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481814520000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
-            <marker date="1481814520000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
-            <marker date="1481814520000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
+            <marker date="1481814954000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
+            <marker date="1481814954000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
+            <marker date="1481814954000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -748,9 +647,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481814520000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
-            <marker date="1481814520000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
-            <marker date="1481814520000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
+            <marker date="1481814954000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
+            <marker date="1481814954000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
+            <marker date="1481814954000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -760,9 +659,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481814520000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
-            <marker date="1481814520000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
-            <marker date="1481814520000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
+            <marker date="1481814954000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
+            <marker date="1481814954000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
+            <marker date="1481814954000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -971,12 +870,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/chenggongdinggou.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1537">
-          <caret line="141" column="32" lean-forward="false" selection-start-line="141" selection-start-column="32" selection-end-line="141" selection-end-column="32" />
+        <state relative-caret-position="472">
+          <caret line="193" column="40" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
           <folding>
-            <marker date="1481814520000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
-            <marker date="1481814520000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
-            <marker date="1481814520000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
+            <marker date="1481814954000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
+            <marker date="1481814954000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
+            <marker date="1481814954000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
