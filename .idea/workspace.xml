@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22c28c5b-827b-4464-8dd7-f5c0a0b77052" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/com/tigerjoys/messagecontent/dbo.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/com/tigerjoys/messagecontent/tuiding.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sp_dongyichen.iml" afterPath="$PROJECT_DIR$/.idea/sp_dongyichen.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/tigerjoys/messagecontent/chenggongdinggou.py" afterPath="$PROJECT_DIR$/com/tigerjoys/messagecontent/chenggongdinggou.py" />
     </list>
@@ -40,12 +40,14 @@
       <file leaf-file-name="chenggongdinggou.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/chenggongdinggou.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="193" column="40" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="14" column="87" lean-forward="false" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="87" />
               <folding>
-                <marker date="1481814954000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
-                <marker date="1481814954000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
-                <marker date="1481814954000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
+                <marker date="1482727838000" expanded="true" signature="429:492" ph="select max(i... sms_received_histories_all_thread" />
+                <marker date="1482727838000" expanded="true" signature="596:729" ph="select creat... sms_received_histories_all" />
+                <marker date="1482727838000" expanded="true" signature="1190:1351" ph="select creat... sms_received_histories_all" />
+                <marker date="1482727838000" expanded="true" signature="5419:5451" ph="select id, n... sp_channels" />
+                <marker date="1482727838000" expanded="true" signature="5510:5570" ph="select id, a... charge_codes" />
               </folding>
             </state>
           </provider>
@@ -87,9 +89,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="44" />
-    <option name="y" value="90" />
-    <option name="width" value="1366" />
+    <option name="x" value="1871" />
+    <option name="y" value="30" />
+    <option name="width" value="1843" />
     <option name="height" value="741" />
   </component>
   <component name="ProjectView">
@@ -107,6 +109,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -166,7 +169,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -511,10 +513,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="44" y="90" width="1366" height="741" extended-state="0" />
-    <editor active="true" />
+    <frame x="1871" y="30" width="1843" height="741" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19410875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14378731" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -552,9 +554,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481814954000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
-            <marker date="1481814954000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
-            <marker date="1481814954000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
+            <marker date="1482727838000" expanded="true" signature="429:492" ph="select max(i... sms_received_histories_all_thread" />
+            <marker date="1482727838000" expanded="true" signature="596:729" ph="select creat... sms_received_histories_all" />
+            <marker date="1482727838000" expanded="true" signature="1190:1351" ph="select creat... sms_received_histories_all" />
+            <marker date="1482727838000" expanded="true" signature="5419:5451" ph="select id, n... sp_channels" />
+            <marker date="1482727838000" expanded="true" signature="5510:5570" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -564,9 +568,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481814954000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
-            <marker date="1481814954000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
-            <marker date="1481814954000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
+            <marker date="1482727838000" expanded="true" signature="429:492" ph="select max(i... sms_received_histories_all_thread" />
+            <marker date="1482727838000" expanded="true" signature="596:729" ph="select creat... sms_received_histories_all" />
+            <marker date="1482727838000" expanded="true" signature="1190:1351" ph="select creat... sms_received_histories_all" />
+            <marker date="1482727838000" expanded="true" signature="5419:5451" ph="select id, n... sp_channels" />
+            <marker date="1482727838000" expanded="true" signature="5510:5570" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -597,9 +603,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481814954000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
-            <marker date="1481814954000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
-            <marker date="1481814954000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
+            <marker date="1482727838000" expanded="true" signature="429:492" ph="select max(i... sms_received_histories_all_thread" />
+            <marker date="1482727838000" expanded="true" signature="596:729" ph="select creat... sms_received_histories_all" />
+            <marker date="1482727838000" expanded="true" signature="1190:1351" ph="select creat... sms_received_histories_all" />
+            <marker date="1482727838000" expanded="true" signature="5419:5451" ph="select id, n... sp_channels" />
+            <marker date="1482727838000" expanded="true" signature="5510:5570" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -623,9 +631,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481814954000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
-            <marker date="1481814954000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
-            <marker date="1481814954000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
+            <marker date="1482727838000" expanded="true" signature="429:492" ph="select max(i... sms_received_histories_all_thread" />
+            <marker date="1482727838000" expanded="true" signature="596:729" ph="select creat... sms_received_histories_all" />
+            <marker date="1482727838000" expanded="true" signature="1190:1351" ph="select creat... sms_received_histories_all" />
+            <marker date="1482727838000" expanded="true" signature="5419:5451" ph="select id, n... sp_channels" />
+            <marker date="1482727838000" expanded="true" signature="5510:5570" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -635,9 +645,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481814954000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
-            <marker date="1481814954000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
-            <marker date="1481814954000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
+            <marker date="1482727838000" expanded="true" signature="429:492" ph="select max(i... sms_received_histories_all_thread" />
+            <marker date="1482727838000" expanded="true" signature="596:729" ph="select creat... sms_received_histories_all" />
+            <marker date="1482727838000" expanded="true" signature="1190:1351" ph="select creat... sms_received_histories_all" />
+            <marker date="1482727838000" expanded="true" signature="5419:5451" ph="select id, n... sp_channels" />
+            <marker date="1482727838000" expanded="true" signature="5510:5570" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -647,9 +659,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481814954000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
-            <marker date="1481814954000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
-            <marker date="1481814954000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
+            <marker date="1482727838000" expanded="true" signature="429:492" ph="select max(i... sms_received_histories_all_thread" />
+            <marker date="1482727838000" expanded="true" signature="596:729" ph="select creat... sms_received_histories_all" />
+            <marker date="1482727838000" expanded="true" signature="1190:1351" ph="select creat... sms_received_histories_all" />
+            <marker date="1482727838000" expanded="true" signature="5419:5451" ph="select id, n... sp_channels" />
+            <marker date="1482727838000" expanded="true" signature="5510:5570" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -659,9 +673,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1481814954000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
-            <marker date="1481814954000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
-            <marker date="1481814954000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
+            <marker date="1482727838000" expanded="true" signature="429:492" ph="select max(i... sms_received_histories_all_thread" />
+            <marker date="1482727838000" expanded="true" signature="596:729" ph="select creat... sms_received_histories_all" />
+            <marker date="1482727838000" expanded="true" signature="1190:1351" ph="select creat... sms_received_histories_all" />
+            <marker date="1482727838000" expanded="true" signature="5419:5451" ph="select id, n... sp_channels" />
+            <marker date="1482727838000" expanded="true" signature="5510:5570" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>
@@ -694,13 +710,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/dbo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/dbo.py" />
     <entry file="file://$PROJECT_DIR$/com/tigerjoys/fenlei/textPrecessor.py" />
     <entry file="file://$PROJECT_DIR$/com/tigerjoys/dongyichen/entranceMain.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -773,13 +783,7 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2016.2/python_stubs/140606734/numpy/core/multiarray.py" />
-    <entry file="file:///usr/local/lib/python2.7/site-packages/numpy/core/numeric.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="380" column="20" lean-forward="false" selection-start-line="380" selection-start-column="20" selection-end-line="380" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/lib/python2.7/site-packages/numpy/core/numeric.py" />
     <entry file="file:///usr/local/lib/python2.7/site-packages/sklearn/cluster/k_means_.py" />
     <entry file="file:///usr/local/lib/python2.7/site-packages/jieba/analyse/__init__.py" />
     <entry file="file:///usr/local/lib/python2.7/site-packages/sklearn/utils/validation.py" />
@@ -802,20 +806,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="80" column="17" lean-forward="false" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/site-packages/MySQLdb/connections.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-319">
-          <caret line="61" column="8" lean-forward="false" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py" />
+    <entry file="file:///usr/local/lib/python2.7/site-packages/MySQLdb/connections.py" />
     <entry file="file://$PROJECT_DIR$/com/tigerjoys/fenlei/scikitKmeans.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -852,30 +844,18 @@
       </provider>
     </entry>
     <entry file="file:///usr/local/Cellar/python/2.7.12_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/re.py" />
-    <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/dbo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/tuiding.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/dbo.py" />
+    <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/tuiding.py" />
     <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/chenggongdinggou.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="193" column="40" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+        <state relative-caret-position="210">
+          <caret line="14" column="87" lean-forward="false" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="87" />
           <folding>
-            <marker date="1481814954000" expanded="true" signature="454:615" ph="select creat... sms_received_histories_all" />
-            <marker date="1481814954000" expanded="true" signature="4683:4715" ph="select id, n... sp_channels" />
-            <marker date="1481814954000" expanded="true" signature="4774:4834" ph="select id, a... charge_codes" />
+            <marker date="1482727838000" expanded="true" signature="429:492" ph="select max(i... sms_received_histories_all_thread" />
+            <marker date="1482727838000" expanded="true" signature="596:729" ph="select creat... sms_received_histories_all" />
+            <marker date="1482727838000" expanded="true" signature="1190:1351" ph="select creat... sms_received_histories_all" />
+            <marker date="1482727838000" expanded="true" signature="5419:5451" ph="select id, n... sp_channels" />
+            <marker date="1482727838000" expanded="true" signature="5510:5570" ph="select id, a... charge_codes" />
           </folding>
         </state>
       </provider>

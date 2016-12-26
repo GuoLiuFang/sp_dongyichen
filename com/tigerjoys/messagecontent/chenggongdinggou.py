@@ -8,6 +8,20 @@ import re
 from suds.client import Client
 
 
+def fetchMessageById():
+    dbConenectMessage = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
+                                        use_unicode=True, port=5209, charset='utf8')
+    messageExecutor = dbConenectMessage.cursor()
+    sql_get_max_id = """select max(id) from honeycomb.sms_received_histories_all_thread"""
+    messageExecutor.execute(sql_get_max_id)
+    max_id = messageExecutor.fetchone()[0]
+    sql = """select create_time,uuid,content,id,sc,rimsi,record_time from honeycomb.sms_received_histories_all where content is not null and id > """ + str(
+        max_id)
+    messageExecutor.execute(sql)
+    messageContent = messageExecutor.fetchall()
+    return messageContent
+
+
 def fetchMessageAll(start, end):
     dbConenectMessage = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
                                         use_unicode=True, port=5209, charset='utf8')
@@ -138,7 +152,8 @@ executor.execute("""select id, name from sp_channels""")
 sp_channels = executor.fetchall()
 executor.execute("""select id, amount, name, dest_number, code from charge_codes""")
 charge_codes = executor.fetchall()
-messageContent = fetchMessageAll(sys.argv[1], sys.argv[2])
+# messageContent = fetchMessageAll(sys.argv[1], sys.argv[2])
+messageContent = fetchMessageById()
 csvfile = open("/home/guoliufang/ResultCsv.txt", mode='wa+')
 # csvfile = open("/Users/LiuFangGuo/Downloads/ResultCsv.txt", mode='wa+')
 csvlist = []
