@@ -5,29 +5,14 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 import MySQLdb
 import re
-from suds.client import Client
 
 
-def fetchMessageById():
+def fixData():
     dbConenectMessage = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
                                         use_unicode=True, port=5209, charset='utf8')
     messageExecutor = dbConenectMessage.cursor()
-    sql_get_max_id = """select max(id) from honeycomb.sms_received_histories_all_thread"""
-    messageExecutor.execute(sql_get_max_id)
-    max_id = messageExecutor.fetchone()[0]
-    sql = """select create_time,uuid,content,id,sc,rimsi,record_time from honeycomb.sms_received_histories_all where content is not null and id > """ + str(
-        max_id)
+    sql = """select * from honeycomb.sms_received_histories_all_thread where content is not null and status in (-11,-13) and content like '%职业鉴定%' and content like '%兆荣联合%' limit 10"""
     messageExecutor.execute(sql)
-    messageContent = messageExecutor.fetchall()
-    return messageContent
-
-
-def fetchMessageAll(start, end):
-    dbConenectMessage = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
-                                        use_unicode=True, port=5209, charset='utf8')
-    messageExecutor = dbConenectMessage.cursor()
-    messageExecutor.execute(
-        """select create_time,uuid,content,id,sc,rimsi,record_time from honeycomb.sms_received_histories_all where content is not null and id BETWEEN """ + start + """ and """ + end)
     messageContent = messageExecutor.fetchall()
     return messageContent
 
@@ -115,35 +100,6 @@ def getChargeConde(sp_name, message):
     return -1
 
 
-def getProCity(sc, rimsi):
-    city_id = -1
-    city_name = -1
-    city_pro_id = -1
-    operator_id = -1
-    operator_name = -1
-    province_name = -1
-    province_id = -1
-    if not str(sc).isdigit():
-        sc = ''
-    if not str(rimsi).isdigit():
-        rimsi = ''
-    if str(sc) or str(rimsi):
-        result = client.service.locate1(sc, rimsi)
-        if hasattr(result.result, 'cities'):
-            city_id = result.result.cities[0].id
-            city_name = result.result.cities[0].name
-            city_pro_id = result.result.cities[0].province_id
-        operator_id = result.result.operator.id
-        if hasattr(result.result.operator, 'name'):
-            operator_name = result.result.operator.name
-        if hasattr(result.result, 'province'):
-            if hasattr(result.result.province, 'name'):
-                province_name = result.result.province.name
-            if hasattr(result.result.province, 'id'):
-                province_id = result.result.province.id
-    return (city_id, city_name, city_pro_id, operator_id, operator_name, province_name, province_id)
-
-
 # ---从这里开始是 main 函数入口
 dbConenectReference = MySQLdb.connect(host='192.168.12.66', user='tigerreport', passwd='titmds4sp',
                                       db='TigerReport_production', use_unicode=True, charset='utf8')
@@ -153,27 +109,25 @@ sp_channels = executor.fetchall()
 executor.execute("""select id, amount, name, dest_number, code from charge_codes""")
 charge_codes = executor.fetchall()
 # messageContent = fetchMessageAll(sys.argv[1], sys.argv[2])
-messageContent = fetchMessageById()
-csvfile = open("/home/guoliufang/ResultCsv.txt", mode='wa+')
-# csvfile = open("/Users/LiuFangGuo/Downloads/ResultCsv.txt", mode='wa+')
+# messageContent = fetchMessageById()
+messageContent = fixData()
+# csvfile = open("/home/guoliufang/ResultCsv.txt", mode='wa+')
+csvfile = open("/Users/LiuFangGuo/Downloads/ResultCsv.txt", mode='wa+')
 csvlist = []
-wsdl_url = """http://panda.didiman.com:82/Panda/LocationWebService?wsdl"""
-client = Client(wsdl_url)
 for index in range(len(messageContent)):
     message = messageContent[index][2].encode(encoding='utf-8')
     # message = """(1/2)您已成功定制联通宽带在线有限公司5575(10655575102)的10元给力付包月业务，发送TD10到10655575102退订"""
     sc = messageContent[index][4]
     rimsi = messageContent[index][5]
-    proCity = getProCity(sc, rimsi)
     isValid = getValidMessage(message)
     if not isValid:
         # -11代表不包含完成时的状态关键字
         csvlist.append(
             (
                 messageContent[index][0], messageContent[index][1], messageContent[index][2], messageContent[index][3],
-                messageContent[index][4], messageContent[index][5], messageContent[index][6], proCity[0], proCity[1],
-                proCity[2], proCity[3],
-                proCity[4], proCity[5], proCity[6],
+                messageContent[index][4], messageContent[index][5], messageContent[index][6], messageContent[index][7],
+                messageContent[index][8], messageContent[index][9], messageContent[index][10],
+                messageContent[index][11], messageContent[index][12], messageContent[index][13],
                 -11,
                 -1, -1, -1, -1, -1, -1, -1, -1, -1))
         continue
@@ -186,8 +140,9 @@ for index in range(len(messageContent)):
                 csvlist.append((
                     messageContent[index][0], messageContent[index][1], messageContent[index][2],
                     messageContent[index][3], messageContent[index][4], messageContent[index][5],
-                    messageContent[index][6], proCity[0],
-                    proCity[1], proCity[2], proCity[3], proCity[4], proCity[5], proCity[6], -13, -1, -1,
+                    messageContent[index][6], messageContent[index][7], messageContent[index][8],
+                    messageContent[index][9], messageContent[index][10], messageContent[index][11],
+                    messageContent[index][12], messageContent[index][13], -13, -1, -1,
                     -1, -1, -1, -1, -1, -1, -1))
                 continue
             else:
@@ -195,16 +150,17 @@ for index in range(len(messageContent)):
                     csvlist.append((
                         messageContent[index][0], messageContent[index][1], messageContent[index][2],
                         messageContent[index][3], messageContent[index][4], messageContent[index][5],
-                        messageContent[index][6], proCity[0],
-                        proCity[1], proCity[2], proCity[3], proCity[4], proCity[5], proCity[6], status,
+                        messageContent[index][6], messageContent[index][7], messageContent[index][8],
+                        messageContent[index][9], messageContent[index][10], messageContent[index][11],
+                        messageContent[index][12], messageContent[index][13], status,
                         i[0], i[1], i[2], i[3], i[4], i[5], i[6], i[7], i[8]))
         else:
             # -12代表虽然包含了完成时，但是仍然不是要找的3个类别中的东西
             csvlist.append((
                 messageContent[index][0], messageContent[index][1], messageContent[index][2], messageContent[index][3],
-                messageContent[index][4], messageContent[index][5], messageContent[index][6], proCity[0], proCity[1],
-                proCity[2], proCity[3],
-                proCity[4], proCity[5], proCity[6],
+                messageContent[index][4], messageContent[index][5], messageContent[index][6], messageContent[index][7],
+                messageContent[index][8], messageContent[index][9], messageContent[index][10],
+                messageContent[index][11], messageContent[index][12], messageContent[index][13],
                 -12, -1, -1, -1,
                 -1, -1, -1, -1, -1, -1))
             continue
