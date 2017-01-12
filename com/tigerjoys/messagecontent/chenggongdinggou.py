@@ -7,18 +7,22 @@ import MySQLdb
 import re
 
 
-def fixData():
+def fixData(day):
+    start = """'""" + day + """'"""
+    # end = """'""" + day + """ 00:10:59'"""
+    end = """'""" + day + """ 23:59:59'"""
     dbConenectMessage = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
                                         use_unicode=True, port=5209, charset='utf8')
     messageExecutor = dbConenectMessage.cursor()
-    sql = """select * from honeycomb.sms_received_histories_all_thread where content is not null and status in (-11,-13) and content like '%职业鉴定%' and content like '%兆荣联合%' limit 10"""
+    sql = """select * from honeycomb.sms_received_histories_all_thread where content is not null and status !=2 and record_time between """ + start + """ and """ + end
+    # print sql
     messageExecutor.execute(sql)
     messageContent = messageExecutor.fetchall()
     return messageContent
 
 
 def getValidMessage(message):
-    finished = ('点播了', '已', '感谢您使用')
+    finished = ('点播了', '已', '感谢您使用', '订购的')
     for i in finished:
         if i in message:
             return True
@@ -26,7 +30,13 @@ def getValidMessage(message):
 
 
 def getSubString(message):
-    start = message.index('已')
+    a = 0
+    if '已' in message:
+        a = message.index('已')
+    b = 0
+    if '订购的' in message:
+        b = message.index('订购的')
+    start = max(a, b)
     leng = 28
     targetStr = message[start:start + leng]
     return targetStr
@@ -59,7 +69,6 @@ def ChargeCodeInSpNames(param):
 
 
 def getSpName(message):
-    result_list = []
     sp_name_list = []
     for sp_tuple in sp_channels:
         sp_name = sp_tuple[1].encode(encoding='utf-8')
@@ -72,11 +81,9 @@ def getSpName(message):
                     continue
                 else:
                     sp_name_list.append(sp_name)
-                    result_list.append((
+                    return (
                         sp_tuple[0], sp_name, ch_code[0], ch_code[1], ch_code[2], ch_code[3], ch_code[4],
-                        ch_code[5], ch_code[6]))
-    if len(result_list) > 0:
-        return result_list
+                        ch_code[5], ch_code[6])
     return -1
 
 
@@ -92,7 +99,7 @@ def getChargeConde(sp_name, message):
                     if (code) and (code in message):
                         tmp = re.match("""\d+元""", code)
                         if tmp:
-                            return -1
+                            continue
                         else:
                             charge_code_instruc_no_t = charge_tuple[4].replace("""*#T""", """""")
                             return (charge_tuple[0], charge_tuple[1], sp_charge_str, charge_tuple[3], charge_tuple[4],
@@ -108,15 +115,14 @@ executor.execute("""select id, name from sp_channels""")
 sp_channels = executor.fetchall()
 executor.execute("""select id, amount, name, dest_number, code from charge_codes""")
 charge_codes = executor.fetchall()
-# messageContent = fetchMessageAll(sys.argv[1], sys.argv[2])
-# messageContent = fetchMessageById()
-messageContent = fixData()
-# csvfile = open("/home/guoliufang/ResultCsv.txt", mode='wa+')
-csvfile = open("/Users/LiuFangGuo/Downloads/ResultCsv.txt", mode='wa+')
+# messageContent = fixData('2016-11-01')
+messageContent = fixData(sys.argv[1])
+# 这是修补数据所在的地址
+csvfile = open("/data/sdg/guoliufang/mysqloutfile/FixCsv.txt", mode='wa+')
+# csvfile = open("/Users/LiuFangGuo/Downloads/ResultCsv.txt", mode='wa+')
 csvlist = []
 for index in range(len(messageContent)):
     message = messageContent[index][2].encode(encoding='utf-8')
-    # message = """(1/2)您已成功定制联通宽带在线有限公司5575(10655575102)的10元给力付包月业务，发送TD10到10655575102退订"""
     sc = messageContent[index][4]
     rimsi = messageContent[index][5]
     isValid = getValidMessage(message)
@@ -146,14 +152,14 @@ for index in range(len(messageContent)):
                     -1, -1, -1, -1, -1, -1, -1))
                 continue
             else:
-                for i in sp_name:
-                    csvlist.append((
-                        messageContent[index][0], messageContent[index][1], messageContent[index][2],
-                        messageContent[index][3], messageContent[index][4], messageContent[index][5],
-                        messageContent[index][6], messageContent[index][7], messageContent[index][8],
-                        messageContent[index][9], messageContent[index][10], messageContent[index][11],
-                        messageContent[index][12], messageContent[index][13], status,
-                        i[0], i[1], i[2], i[3], i[4], i[5], i[6], i[7], i[8]))
+                csvlist.append((
+                    messageContent[index][0], messageContent[index][1], messageContent[index][2],
+                    messageContent[index][3], messageContent[index][4], messageContent[index][5],
+                    messageContent[index][6], messageContent[index][7], messageContent[index][8],
+                    messageContent[index][9], messageContent[index][10], messageContent[index][11],
+                    messageContent[index][12], messageContent[index][13], status,
+                    sp_name[0], sp_name[1], sp_name[2], sp_name[3], sp_name[4], sp_name[5], sp_name[6], sp_name[7],
+                    sp_name[8]))
         else:
             # -12代表虽然包含了完成时，但是仍然不是要找的3个类别中的东西
             csvlist.append((
