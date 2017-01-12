@@ -107,7 +107,7 @@ def getChargeConde(sp_name, message):
                     if (code) and (code in message):
                         tmp = re.match("""\d+元""", code)
                         if tmp:
-                            return -1
+                            continue
                         else:
                             charge_code_instruc_no_t = charge_tuple[4].replace("""*#T""", """""")
                             return (charge_tuple[0], charge_tuple[1], sp_charge_str, charge_tuple[3], charge_tuple[4],
@@ -154,7 +154,7 @@ executor.execute("""select id, amount, name, dest_number, code from charge_codes
 charge_codes = executor.fetchall()
 # messageContent = fetchMessageAll(sys.argv[1], sys.argv[2])
 messageContent = fetchMessageById()
-csvfile = open("/home/guoliufang/ResultCsv.txt", mode='wa+')
+csvfile = open("/data/sdg/guoliufang/other_work_space/ResultCsv.txt", mode='wa+')
 # csvfile = open("/Users/LiuFangGuo/Downloads/ResultCsv.txt", mode='wa+')
 csvlist = []
 wsdl_url = """http://panda.didiman.com:82/Panda/LocationWebService?wsdl"""
