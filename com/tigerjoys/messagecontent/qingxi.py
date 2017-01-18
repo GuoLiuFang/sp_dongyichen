@@ -8,6 +8,12 @@ import MySQLdb
 import re
 import os
 
+os.system("""rm -rf /data/sdg/guoliufang/mysqloutfile/chargeCodeStatistic.txt""")
+dbConenectMessage = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
+                                    use_unicode=True, port=5209, charset='utf8')
+messageExecutor = dbConenectMessage.cursor()
+sql = """truncate charge_codes_statistic"""
+messageExecutor.execute(sql)
 dbConenectReference = MySQLdb.connect(host='192.168.12.66', user='tigerreport', passwd='titmds4sp',
                                       db='TigerReport_production', use_unicode=True, charset='utf8')
 executor = dbConenectReference.cursor()
@@ -35,4 +41,5 @@ for charge_tuple in charge_codes:
 for record in csvlist:
     csvfile.write('|'.join(str(e) for e in record) + "\n")
 csvfile.close()
-os.system("""/usr/local/Calpont/bin/cpimport honeycomb charge_codes_statistic -s '|' /data/sdg/guoliufang/mysqloutfile/chargeCodeStatistic.txt""")
+os.system(
+    """/usr/local/Calpont/bin/cpimport honeycomb charge_codes_statistic -s '|' /data/sdg/guoliufang/mysqloutfile/chargeCodeStatistic.txt""")
