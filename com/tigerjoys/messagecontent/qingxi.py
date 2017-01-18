@@ -7,18 +7,27 @@ sys.setdefaultencoding('utf-8')
 import MySQLdb
 import re
 import os
+import datetime
 
+# 每个月某日把最近7个月的charge_code_id抓出来
 os.system("""rm -rf /data/sdg/guoliufang/mysqloutfile/chargeCodeStatistic.txt""")
 dbConenectMessage = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
                                     use_unicode=True, port=5209, charset='utf8')
 messageExecutor = dbConenectMessage.cursor()
 sql = """truncate charge_codes_statistics"""
 messageExecutor.execute(sql)
-dbConenectReference = MySQLdb.connect(host='192.168.12.66', user='tigerreport', passwd='titmds4sp',
-                                      db='TigerReport_production', use_unicode=True, charset='utf8')
+dbConenectReference = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108',
+                                      db='smart_production', use_unicode=True, port=5209, charset='utf8')
 executor = dbConenectReference.cursor()
-executor.execute(
-    """select id, amount, name, dest_number, code from charge_codes where name like '%元%'""")
+currentYue = datetime.datetime.now().strftime("%Y-%m")
+halfYearAgo = (datetime.datetime.now() - datetime.timedelta(days=6 * 30)).strftime("%Y-%m")
+end = """'""" + currentYue + """-01'"""
+print end
+start = """'""" + halfYearAgo + """-01'"""
+print start
+zhongyao = """select id, amount, name, dest_number, code from charge_codes where name like '%元%' and id in (select charge_code_id from charge_code_deliver_details where created_at between """ + start + """ and """ + end + """)"""
+print zhongyao
+executor.execute(zhongyao)
 charge_codes = executor.fetchall()
 csvfile = open("/data/sdg/guoliufang/mysqloutfile/chargeCodeStatistic.txt", mode='wa+')
 # csvfile = open("/Users/LiuFangGuo/Downloads/chargeCodeStatistic.txt", mode='wa+')
@@ -32,7 +41,7 @@ for charge_tuple in charge_codes:
             charge_code_instruc_no_t = charge_tuple[4].replace("""*#T""", """""").replace("\r\n", "")
             union_name = charge_code_instruc_no_t + "_" + charge_tuple[3].replace("\r\n", "")
             csvlist.append(
-                ("",charge_tuple[0], charge_tuple[1], charge_tuple[2].replace("\r\n", ""),
+                ("", charge_tuple[0], charge_tuple[1], charge_tuple[2].replace("\r\n", ""),
                  charge_tuple[3].replace("\r\n", ""),
                  charge_tuple[4].replace("\r\n", ""),
                  charge_code_instruc_no_t.replace("\r\n", ""),
