@@ -12,7 +12,7 @@ os.system("""rm -rf /data/sdg/guoliufang/mysqloutfile/chargeCodeStatistic.txt"""
 dbConenectMessage = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
                                     use_unicode=True, port=5209, charset='utf8')
 messageExecutor = dbConenectMessage.cursor()
-sql = """truncate charge_codes_statistic"""
+sql = """truncate charge_codes_statistics"""
 messageExecutor.execute(sql)
 dbConenectReference = MySQLdb.connect(host='192.168.12.66', user='tigerreport', passwd='titmds4sp',
                                       db='TigerReport_production', use_unicode=True, charset='utf8')
@@ -32,7 +32,7 @@ for charge_tuple in charge_codes:
             charge_code_instruc_no_t = charge_tuple[4].replace("""*#T""", """""").replace("\r\n", "")
             union_name = charge_code_instruc_no_t + "_" + charge_tuple[3].replace("\r\n", "")
             csvlist.append(
-                (charge_tuple[0], charge_tuple[1], charge_tuple[2].replace("\r\n", ""),
+                ("",charge_tuple[0], charge_tuple[1], charge_tuple[2].replace("\r\n", ""),
                  charge_tuple[3].replace("\r\n", ""),
                  charge_tuple[4].replace("\r\n", ""),
                  charge_code_instruc_no_t.replace("\r\n", ""),
@@ -41,5 +41,6 @@ for charge_tuple in charge_codes:
 for record in csvlist:
     csvfile.write('|'.join(str(e) for e in record) + "\n")
 csvfile.close()
+
 os.system(
-    """/usr/local/Calpont/bin/cpimport honeycomb charge_codes_statistic -s '|' /data/sdg/guoliufang/mysqloutfile/chargeCodeStatistic.txt""")
+    """/usr/local/Calpont/mysql/bin/mysql --defaults-file=/usr/local/Calpont/mysql/my.cnf -u root -uroot -ptiger2108 honeycomb -e "load data infile '/data/sdg/guoliufang/mysqloutfile/chargeCodeStatistic.txt' into table charge_codes_statistics fields terminated by '|'" """)
