@@ -5,8 +5,6 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 import MySQLdb
-import re
-import os
 
 
 def fixData(day):
