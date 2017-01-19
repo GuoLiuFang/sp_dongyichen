@@ -64,7 +64,7 @@ def getStatus(message):
 
 def getChargeStr(message):
     for yewuTuple in yewucodeList:
-        yewucode_name = yewuTuple[6].encode(encoding='utf-8')
+        yewucode_name = yewuTuple[7].encode(encoding='utf-8')
         if yewucode_name in message:
             return yewuTuple
     return -1
@@ -118,8 +118,9 @@ for index in range(len(messageContent)):
                     messageContent[index][6], messageContent[index][7], messageContent[index][8],
                     messageContent[index][9], messageContent[index][10], messageContent[index][11],
                     messageContent[index][12], messageContent[index][13], status,
-                    chargeStr[0], chargeStr[1], chargeStr[2], chargeStr[3], chargeStr[4], chargeStr[5], chargeStr[6],
-                    chargeStr[7]))
+                    chargeStr[1], chargeStr[2], chargeStr[3], chargeStr[4], chargeStr[5], chargeStr[6], chargeStr[7],
+                    chargeStr[8]))
+                continue
         else:
             # -12代表虽然包含了完成时，但是仍然不是要找的3个类别中的东西
             csvlist.append((

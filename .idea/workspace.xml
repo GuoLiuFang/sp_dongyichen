@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="22c28c5b-827b-4464-8dd7-f5c0a0b77052" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/tigerjoys/messagecontent/qingxi.py" afterPath="$PROJECT_DIR$/com/tigerjoys/messagecontent/qingxi.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py" afterPath="$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py" />
     </list>
     <ignored path="sp_dongyichen.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,56 +36,34 @@
     <favorites_list name="sp_dongyichen" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.21218836">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="chenggongdinggou.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/chenggongdinggou.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="48" column="1" lean-forward="false" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
-                  <folding>
-                    <marker date="1484213732000" expanded="true" signature="505:650" ph="select * fro... sms_received_histories_all_thread" />
-                    <marker date="1484213732000" expanded="true" signature="3713:3745" ph="select id, n... sp_channels" />
-                    <marker date="1484213732000" expanded="true" signature="3804:3864" ph="select id, a... charge_codes" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="new-clean.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1125">
-                  <caret line="75" column="49" lean-forward="false" selection-start-line="75" selection-start-column="49" selection-end-line="75" selection-end-column="49" />
-                  <folding>
-                    <marker date="1484728131000" expanded="true" signature="527:657" ph="select * fro... sms_received_histories_all_thread" />
-                    <marker date="1484728131000" expanded="true" signature="2125:2162" ph="select * fro... charge_codes_statistics" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="qingxi.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/qingxi.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="405">
-                  <caret line="27" column="124" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-                  <folding>
-                    <marker date="1484739302000" expanded="true" signature="1079:1300" ph="select id, a... charge_codes" />
-                    <marker date="1484739302000" expanded="true" signature="1173:1284" ph="select disti... charge_code_deliver_details" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="new-clean.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="121" column="31" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+              <folding>
+                <marker date="1484800832000" expanded="true" signature="527:657" ph="select * fro... sms_received_histories_all_thread" />
+                <marker date="1484800832000" expanded="true" signature="2125:2162" ph="select * fro... charge_codes_statistics" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qingxi.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/qingxi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="124" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+              <folding>
+                <marker date="1484739302000" expanded="true" signature="1079:1300" ph="select id, a... charge_codes" />
+                <marker date="1484739302000" expanded="true" signature="1173:1284" ph="select disti... charge_code_deliver_details" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -130,8 +108,8 @@
         <option value="$PROJECT_DIR$/com/tigerjoys/fenlei/test.py" />
         <option value="$PROJECT_DIR$/com/tigerjoys/messagecontent/tuiding.py" />
         <option value="$PROJECT_DIR$/com/tigerjoys/messagecontent/chenggongdinggou.py" />
-        <option value="$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py" />
         <option value="$PROJECT_DIR$/com/tigerjoys/messagecontent/qingxi.py" />
+        <option value="$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py" />
       </list>
     </option>
   </component>
@@ -252,8 +230,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -606,6 +584,7 @@
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.118229166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -618,7 +597,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14881623" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -924,11 +902,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="75" column="49" lean-forward="false" selection-start-line="75" selection-start-column="49" selection-end-line="75" selection-end-column="49" />
+        <state relative-caret-position="544">
+          <caret line="121" column="31" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
           <folding>
-            <marker date="1484728131000" expanded="true" signature="527:657" ph="select * fro... sms_received_histories_all_thread" />
-            <marker date="1484728131000" expanded="true" signature="2125:2162" ph="select * fro... charge_codes_statistics" />
+            <marker date="1484800832000" expanded="true" signature="527:657" ph="select * fro... sms_received_histories_all_thread" />
+            <marker date="1484800832000" expanded="true" signature="2125:2162" ph="select * fro... charge_codes_statistics" />
           </folding>
         </state>
       </provider>
