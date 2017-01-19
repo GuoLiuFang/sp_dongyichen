@@ -25,7 +25,7 @@ end = """'""" + currentYue + """-01'"""
 print end
 start = """'""" + halfYearAgo + """-01'"""
 print start
-zhongyao = """select id, amount, name, dest_number, code from charge_codes where name like '%元%' and id in (select charge_code_id from charge_code_deliver_details where created_at between """ + start + """ and """ + end + """)"""
+zhongyao = """select id, amount, name, dest_number, code from charge_codes where name like '%元%' and id in (select distinct charge_code_id from charge_code_deliver_details where created_at between """ + start + """ and """ + end + """)"""
 print zhongyao
 executor.execute(zhongyao)
 charge_codes = executor.fetchall()
