@@ -24,7 +24,7 @@ def getDNLsql(yuefen):
 
 
 def noProvince():
-    # csvfile = open("/data/sdg/guoliufang/mysqloutfile/noProvince.txt", mode='wa+')
+    csvfile = open("/data/sdg/guoliufang/mysqloutfile/noProvince.txt", mode='wa+')
     csvlist = []
     dbConenectMessageAnalysises = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108',
                                                   db='honeycomb',
@@ -61,13 +61,24 @@ def noProvince():
         rows = postCur.fetchall()
         print "&&&&&&&&before" * 10
         print rows
-        a = [0, 0, 0]
-        for i in range(len(rows)):
-            print rows[i][0], rows[i][1]
-            a[i] = rows[i][1]
+        a10 = 0
+        a20 = 0
+        a30 = 0
+        for rtuple in rows:
+            if rtuple[0] == 10:
+                a10 = rtuple[1]
+                print a10
+            elif rtuple[0] == 20:
+                a20 = rtuple[1]
+                print a20
+            elif rtuple[0] == 30:
+                a30 = rtuple[1]
+                print a30
         print "&&&&&&&&after" * 10
-        print a[0], a[1], a[2]
-        # csvlist.append((tuple[0],tuple[1],code_dest_list,'',))
+        csvlist.append((tuple[0], tuple[1], code_dest_list, '', a10, a20, tuple[2], a30))
+    for record in csvlist:
+        csvfile.write('|'.join(str(e) for e in record) + "\n")
+    csvfile.close()
 
 
 # def withProvince():
