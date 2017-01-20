@@ -6,6 +6,7 @@ sys.setdefaultencoding('utf-8')
 import MySQLdb
 import psycopg2
 from calendar import monthrange
+import os
 
 
 def getFormatStartEnd(yuefen):
@@ -18,13 +19,13 @@ def getFormatStartEnd(yuefen):
 
 
 def noProvince():
-    # csvfile = open("/data/sdg/guoliufang/mysqloutfile/noProvince.txt", mode='wa+')
-    csvfile = open("/Users/LiuFangGuo/Downloads/noProvince.txt", mode='wa+')
+    csvfile = open("/data/sdg/guoliufang/mysqloutfile/noProvince.txt", mode='wa+')
+    # csvfile = open("/Users/LiuFangGuo/Downloads/noProvince.txt", mode='wa+')
     csvlist = []
     dbMysqlConn = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
                                   use_unicode=True, port=5209, charset='utf8')
     myExecutor = dbMysqlConn.cursor()
-    smsSQL = """select extract(YEAR_MONTH FROM `record_time`) as yuefen,yewucode_name,count(DISTINCT uuid) from message_analysises GROUP  BY yuefen,yewucode_name limit 10"""
+    smsSQL = """select extract(YEAR_MONTH FROM `record_time`) as yuefen,yewucode_name,count(DISTINCT uuid) from message_analysises GROUP  BY yuefen,yewucode_name"""
     myExecutor.execute(smsSQL)
     smsListTuple = myExecutor.fetchall()
     dbGpsqlConn = psycopg2.connect(database='tjdw', user='tj_root', password='77pbV1YU!T', host='192.168.12.14',
@@ -57,7 +58,7 @@ def noProvince():
             elif rTuple[0] == 30:
                 a30 = rTuple[1]
         inUnionNameListPartSQL = "'" + inUnionNameListPartSQL + "'"
-        csvlist.append((smsTuple[0], smsTuple[1], inUnionNameListPartSQL, '', a10, a20, smsTuple[2], a30))
+        csvlist.append((smsTuple[0], smsTuple[1], inUnionNameListPartSQL, -1, a10, a20, smsTuple[2], a30))
     for record in csvlist:
         csvfile.write('|'.join(str(e) for e in record) + "\n")
     csvfile.close()
@@ -73,3 +74,5 @@ def noProvince():
 # messageExecutor.execute(sql)
 # messageContent = messageExecutor.fetchall()
 noProvince()
+os.system(
+    """/usr/local/Calpont/bin/cpimport honeycomb jieguohuizong -s '|' /data/sdg/guoliufang/mysqloutfile/noProvince.txt""")
