@@ -42,7 +42,7 @@
       <file leaf-file-name="jieguohuizong.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/jieguohuizong.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
+            <state relative-caret-position="1710">
               <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="115" selection-end-column="122" />
               <folding>
                 <marker date="1484903149000" expanded="true" signature="862:1082" ph="select extra... message_analysises" />
@@ -62,7 +62,7 @@
       <file leaf-file-name="new-clean.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="724">
               <caret line="73" column="46" lean-forward="false" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="46" />
               <folding>
                 <marker date="1484897791000" expanded="true" signature="2105:2142" ph="select * fro... charge_codes_statistics" />
@@ -74,12 +74,12 @@
       <file leaf-file-name="fix-clean.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/fix-clean.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2025">
-              <caret line="135" column="62" lean-forward="true" selection-start-line="135" selection-start-column="62" selection-end-line="135" selection-end-column="62" />
+            <state relative-caret-position="545">
+              <caret line="138" column="71" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
               <folding>
-                <marker date="1485086600000" expanded="true" signature="395:468" ph="select * fro... sms_received_histories_all_thread" />
-                <marker date="1485086600000" expanded="true" signature="395:688" ph="select * fro... message_analysises" />
-                <marker date="1485086600000" expanded="true" signature="6141:6281" ph="select * fro... charge_codes_statistics" />
+                <marker date="1485087269000" expanded="true" signature="395:468" ph="select * fro... sms_received_histories_all_thread" />
+                <marker date="1485087269000" expanded="true" signature="395:688" ph="select * fro... message_analysises" />
+                <marker date="1485087269000" expanded="true" signature="6146:6286" ph="select * fro... charge_codes_statistics" />
               </folding>
             </state>
           </provider>
@@ -179,7 +179,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="20" />
+    <option name="x" value="9" />
     <option name="y" value="25" />
     <option name="width" value="1911" />
     <option name="height" value="956" />
@@ -643,7 +643,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="20" y="25" width="1911" height="956" extended-state="0" />
+    <frame x="9" y="25" width="1911" height="956" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13500784" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -652,18 +652,18 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32973805" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.059751973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32973805" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37993234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.059751973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37993234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -925,19 +925,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="73" column="46" lean-forward="false" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="46" />
-          <folding>
-            <marker date="1484897791000" expanded="true" signature="2105:2142" ph="select * fro... charge_codes_statistics" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/jieguohuizong.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
+        <state relative-caret-position="1710">
           <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="115" selection-end-column="122" />
           <folding>
             <marker date="1484903149000" expanded="true" signature="862:1082" ph="select extra... message_analysises" />
@@ -953,14 +943,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="724">
+          <caret line="73" column="46" lean-forward="false" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="46" />
+          <folding>
+            <marker date="1484897791000" expanded="true" signature="2105:2142" ph="select * fro... charge_codes_statistics" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/fix-clean.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2025">
-          <caret line="135" column="62" lean-forward="true" selection-start-line="135" selection-start-column="62" selection-end-line="135" selection-end-column="62" />
+        <state relative-caret-position="545">
+          <caret line="138" column="71" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
           <folding>
-            <marker date="1485086600000" expanded="true" signature="395:468" ph="select * fro... sms_received_histories_all_thread" />
-            <marker date="1485086600000" expanded="true" signature="395:688" ph="select * fro... message_analysises" />
-            <marker date="1485086600000" expanded="true" signature="6141:6281" ph="select * fro... charge_codes_statistics" />
+            <marker date="1485087269000" expanded="true" signature="395:468" ph="select * fro... sms_received_histories_all_thread" />
+            <marker date="1485087269000" expanded="true" signature="395:688" ph="select * fro... message_analysises" />
+            <marker date="1485087269000" expanded="true" signature="6146:6286" ph="select * fro... charge_codes_statistics" />
           </folding>
         </state>
       </provider>

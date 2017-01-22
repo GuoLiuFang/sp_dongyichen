@@ -136,7 +136,7 @@ def exe(sql):
         csvfile.write('|'.join(str(e) for e in record) + "\n")
     csvfile.close()
     os.system(
-        """/usr/local/Calpont/bin/cpimport honeycomb jieguohuizong -s '|' /data/sdg/guoliufang/mysqloutfile/CuoWuXiuZheng.txt""")
+        """/usr/local/Calpont/bin/cpimport honeycomb message_analysises -s '|' /data/sdg/guoliufang/mysqloutfile/CuoWuXiuZheng.txt""")
 
 
 # ---------------
