@@ -22,7 +22,7 @@ def fixData(day):
 
 
 def getValidMessage(message):
-    finished = ('点播了', '已', '感谢您', '订购的')
+    finished = ('点播了', '已', '感谢您', '订购的', '订购了', '生效')
     for i in finished:
         if i in message:
             return True
@@ -36,14 +36,20 @@ def getSubString(message):
     b = 0
     if '订购的' in message:
         b = message.index('订购的')
-    start = max(a, b)
-    leng = 28
+    c = 0
+    if '订购了' in message:
+        c = message.index('订购了')
+    d = 0
+    if '生效' in message:
+        d = message.index('生效')
+    start = max(a, b, c, d)
+    leng = 38
     targetStr = message[start:start + leng]
     return targetStr
 
 
 def getStatus(message):
-    baoyue = ('订购', '定制', '订制', '办理')
+    baoyue = ('订购', '定制', '订制', '办理', '生效')
     dianbo = ('点播', '感谢您')
     cancel = ('取消', '退订')
     for i in dianbo:
@@ -71,7 +77,7 @@ def getChargeStr(message):
 dbConnectChargeStatistic = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
                                            use_unicode=True, port=5209, charset='utf8')
 chargeCodeStatisticExecutor = dbConnectChargeStatistic.cursor()
-sql = """select * from charge_codes_statistics"""
+sql = """select * from charge_codes_statistics where yewucode_name not like '%包月%' AND yewucode_name not like '%小额支付%' and length(yewucode_name) != 0"""
 chargeCodeStatisticExecutor.execute(sql)
 yewucodeList = chargeCodeStatisticExecutor.fetchall()
 # messageContent = fixData('2016-11-01')
