@@ -48,8 +48,11 @@ for charge_tuple in charge_codes:
                  code_list[index - 1].replace("\r\n", ""), union_name.rstrip()))
             break
 for record in csvlist:
-    csvfile.write('|'.join(str(e) for e in record) + "\n")
+    csvfile.write('|'.join(str(e).strip(' \t\n\r') for e in record) + "\n")
 csvfile.close()
 
 os.system(
     """/usr/local/Calpont/mysql/bin/mysql --defaults-file=/usr/local/Calpont/mysql/my.cnf -u root -uroot -ptiger2108 honeycomb -e "load data infile '/data/sdg/guoliufang/mysqloutfile/chargeCodeStatistic.txt' into table charge_codes_statistics fields terminated by '|'" """)
+
+removeTwoWordssql = """delete from charge_codes_statistics where length(trim(yewucode_name)) < 7"""
+messageExecutor.execute(removeTwoWordssql)
