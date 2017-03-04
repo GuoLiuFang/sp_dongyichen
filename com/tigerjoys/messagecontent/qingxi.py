@@ -54,5 +54,5 @@ csvfile.close()
 os.system(
     """/usr/local/Calpont/mysql/bin/mysql --defaults-file=/usr/local/Calpont/mysql/my.cnf -u root -uroot -ptiger2108 honeycomb -e "load data infile '/data/sdg/guoliufang/mysqloutfile/chargeCodeStatistic.txt' into table charge_codes_statistics fields terminated by '|'" """)
 
-removeTwoWordssql = """delete from charge_codes_statistics where length(trim(yewucode_name)) < 7"""
+removeTwoWordssql = """delete from charge_codes_statistics where length(trim(yewucode_name)) < 6"""
 messageExecutor.execute(removeTwoWordssql)

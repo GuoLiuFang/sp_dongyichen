@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22c28c5b-827b-4464-8dd7-f5c0a0b77052" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py" afterPath="$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/tigerjoys/messagecontent/qingxi.py" afterPath="$PROJECT_DIR$/com/tigerjoys/messagecontent/qingxi.py" />
     </list>
     <ignored path="sp_dongyichen.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +38,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="new-clean.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="new-clean.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="480">
@@ -51,12 +51,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="qingxi.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="qingxi.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/qingxi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="785">
-              <caret line="57" column="42" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="725">
+              <caret line="56" column="96" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <folding>
+                <marker date="1488617504000" expanded="true" signature="1079:1300" ph="select id, a... charge_codes" />
+                <marker date="1488617504000" expanded="true" signature="1173:1284" ph="select disti... charge_code_deliver_details" />
+                <marker date="1488617504000" expanded="true" signature="2822:2895" ph="delete from " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,8 +120,8 @@
         <option value="$PROJECT_DIR$/com/tigerjoys/messagecontent/chenggongdinggou.py" />
         <option value="$PROJECT_DIR$/com/tigerjoys/messagecontent/jieguohuizong.py" />
         <option value="$PROJECT_DIR$/com/tigerjoys/messagecontent/fix-clean.py" />
-        <option value="$PROJECT_DIR$/com/tigerjoys/messagecontent/qingxi.py" />
         <option value="$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py" />
+        <option value="$PROJECT_DIR$/com/tigerjoys/messagecontent/qingxi.py" />
       </list>
     </option>
   </component>
@@ -872,14 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/qingxi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="785">
-          <caret line="57" column="42" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -887,6 +883,18 @@
           <folding>
             <marker date="1488617356000" expanded="true" signature="507:637" ph="select * fro... sms_received_histories_all_thread" />
             <marker date="1488617356000" expanded="true" signature="2264:2377" ph="select * fro... charge_codes_statistics" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/qingxi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="56" column="96" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding>
+            <marker date="1488617504000" expanded="true" signature="1079:1300" ph="select id, a... charge_codes" />
+            <marker date="1488617504000" expanded="true" signature="1173:1284" ph="select disti... charge_code_deliver_details" />
+            <marker date="1488617504000" expanded="true" signature="2822:2895" ph="delete from " />
           </folding>
         </state>
       </provider>
