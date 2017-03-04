@@ -77,7 +77,7 @@ def getChargeStr(message):
 dbConnectChargeStatistic = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
                                            use_unicode=True, port=5209, charset='utf8')
 chargeCodeStatisticExecutor = dbConnectChargeStatistic.cursor()
-sql = """select * from charge_codes_statistics where yewucode_name not like '%包月%' AND yewucode_name not like '%小额支付%' and length(yewucode_name) != 0"""
+sql = """select * from charge_codes_statistics where yewucode_name not like '%包月%' AND yewucode_name not like '%小额支付%' and"""
 chargeCodeStatisticExecutor.execute(sql)
 yewucodeList = chargeCodeStatisticExecutor.fetchall()
 # messageContent = fixData('2016-11-01')

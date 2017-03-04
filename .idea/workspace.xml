@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22c28c5b-827b-4464-8dd7-f5c0a0b77052" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/tigerjoys/messagecontent/qingxi.py" afterPath="$PROJECT_DIR$/com/tigerjoys/messagecontent/qingxi.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py" afterPath="$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py" />
     </list>
     <ignored path="sp_dongyichen.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,29 +38,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="new-clean.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="new-clean.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="829">
-              <caret line="79" column="149" lean-forward="false" selection-start-line="79" selection-start-column="149" selection-end-line="79" selection-end-column="149" />
+            <state relative-caret-position="480">
+              <caret line="79" column="122" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
               <folding>
-                <marker date="1488451998000" expanded="true" signature="507:637" ph="select * fro... sms_received_histories_all_thread" />
-                <marker date="1488451998000" expanded="true" signature="2264:2404" ph="select * fro... charge_codes_statistics" />
+                <marker date="1488617356000" expanded="true" signature="507:637" ph="select * fro... sms_received_histories_all_thread" />
+                <marker date="1488617356000" expanded="true" signature="2264:2377" ph="select * fro... charge_codes_statistics" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="qingxi.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="qingxi.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/qingxi.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="785">
               <caret line="57" column="42" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-              <folding>
-                <marker date="1488530915000" expanded="true" signature="1079:1300" ph="select id, a... charge_codes" />
-                <marker date="1488530915000" expanded="true" signature="1173:1284" ph="select disti... charge_code_deliver_details" />
-                <marker date="1488530915000" expanded="true" signature="2822:2895" ph="delete from " />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,8 +116,8 @@
         <option value="$PROJECT_DIR$/com/tigerjoys/messagecontent/chenggongdinggou.py" />
         <option value="$PROJECT_DIR$/com/tigerjoys/messagecontent/jieguohuizong.py" />
         <option value="$PROJECT_DIR$/com/tigerjoys/messagecontent/fix-clean.py" />
-        <option value="$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py" />
         <option value="$PROJECT_DIR$/com/tigerjoys/messagecontent/qingxi.py" />
+        <option value="$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py" />
       </list>
     </option>
   </component>
@@ -132,7 +128,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2008" />
+    <option name="x" value="1929" />
     <option name="y" value="105" />
     <option name="width" value="1911" />
     <option name="height" value="956" />
@@ -152,6 +148,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -243,7 +240,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -596,7 +592,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2008" y="105" width="1911" height="956" extended-state="0" />
+    <frame x="1929" y="105" width="1911" height="956" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15279958" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -873,22 +869,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="815">
           <caret line="145" column="9" lean-forward="false" selection-start-line="145" selection-start-column="9" selection-end-line="145" selection-end-column="149" />
-          <folding>
-            <marker date="1485087269000" expanded="true" signature="395:468" ph="select * fro... sms_received_histories_all_thread" />
-            <marker date="1485087269000" expanded="true" signature="395:688" ph="select * fro... message_analysises" />
-            <marker date="1485087269000" expanded="true" signature="6146:6286" ph="select * fro... charge_codes_statistics" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="829">
-          <caret line="79" column="149" lean-forward="false" selection-start-line="79" selection-start-column="149" selection-end-line="79" selection-end-column="149" />
-          <folding>
-            <marker date="1488451998000" expanded="true" signature="507:637" ph="select * fro... sms_received_histories_all_thread" />
-            <marker date="1488451998000" expanded="true" signature="2264:2404" ph="select * fro... charge_codes_statistics" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -896,10 +876,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="785">
           <caret line="57" column="42" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="79" column="122" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
           <folding>
-            <marker date="1488530915000" expanded="true" signature="1079:1300" ph="select id, a... charge_codes" />
-            <marker date="1488530915000" expanded="true" signature="1173:1284" ph="select disti... charge_code_deliver_details" />
-            <marker date="1488530915000" expanded="true" signature="2822:2895" ph="delete from " />
+            <marker date="1488617356000" expanded="true" signature="507:637" ph="select * fro... sms_received_histories_all_thread" />
+            <marker date="1488617356000" expanded="true" signature="2264:2377" ph="select * fro... charge_codes_statistics" />
           </folding>
         </state>
       </provider>
