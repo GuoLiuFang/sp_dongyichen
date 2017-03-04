@@ -19,7 +19,7 @@
     <SUITE FILE_PATH="coverage/sp_dongyichen$test.coverage" NAME="test Coverage Results" MODIFIED="1484130600137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/tigerjoys/fenlei" />
     <SUITE FILE_PATH="coverage/sp_dongyichen$scikitKmeans.coverage" NAME="scikitKmeans Coverage Results" MODIFIED="1479292147734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/tigerjoys/fenlei" />
     <SUITE FILE_PATH="coverage/sp_dongyichen$jiebafenci.coverage" NAME="jiebafenci Coverage Results" MODIFIED="1479287726401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/tigerjoys/fenlei" />
-    <SUITE FILE_PATH="coverage/sp_dongyichen$new_clean.coverage" NAME="new-clean Coverage Results" MODIFIED="1484723064095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/tigerjoys/messagecontent" />
+    <SUITE FILE_PATH="coverage/sp_dongyichen$new_clean.coverage" NAME="new-clean Coverage Results" MODIFIED="1488620015837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/tigerjoys/messagecontent" />
     <SUITE FILE_PATH="coverage/sp_dongyichen$fix_clean.coverage" NAME="fix-clean Coverage Results" MODIFIED="1485085946009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/tigerjoys/messagecontent" />
     <SUITE FILE_PATH="coverage/sp_dongyichen$dbo.coverage" NAME="dbo Coverage Results" MODIFIED="1479463480711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/tigerjoys/messagecontent" />
     <SUITE FILE_PATH="coverage/sp_dongyichen$tuiding.coverage" NAME="tuiding Coverage Results" MODIFIED="1480746505865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/com/tigerjoys/messagecontent" />
@@ -41,11 +41,25 @@
       <file leaf-file-name="new-clean.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="79" column="118" lean-forward="false" selection-start-line="79" selection-start-column="118" selection-end-line="79" selection-end-column="118" />
+            <state relative-caret-position="34">
+              <caret line="93" column="38" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
               <folding>
-                <marker date="1488617891000" expanded="true" signature="507:637" ph="select * fro... sms_received_histories_all_thread" />
-                <marker date="1488617891000" expanded="true" signature="2264:2373" ph="select * fro... charge_codes_statistics" />
+                <marker date="1488620132000" expanded="true" signature="507:637" ph="select * fro... sms_received_histories_all_thread" />
+                <marker date="1488620132000" expanded="true" signature="2324:2433" ph="select * fro... charge_codes_statistics" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qingxi.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/qingxi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="725">
+              <caret line="56" column="96" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <folding>
+                <marker date="1488617504000" expanded="true" signature="1079:1300" ph="select id, a... charge_codes" />
+                <marker date="1488617504000" expanded="true" signature="1173:1284" ph="select disti... charge_code_deliver_details" />
+                <marker date="1488617504000" expanded="true" signature="2822:2895" ph="delete from " />
               </folding>
             </state>
           </provider>
@@ -118,8 +132,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1929" />
-    <option name="y" value="105" />
+    <option name="x" value="1931" />
+    <option name="y" value="82" />
     <option name="width" value="1911" />
     <option name="height" value="956" />
   </component>
@@ -234,7 +248,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js.eslint.eslintPackage" value="" />
   </component>
@@ -243,7 +257,7 @@
       <recent name="$PROJECT_DIR$/com/tigerjoys/messagecontent" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.fix-clean">
+  <component name="RunManager" selected="Python.new-clean">
     <configuration default="false" name="chenggongdinggou" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -557,10 +571,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.fix-clean" />
-        <item index="1" class="java.lang.String" itemvalue="Python.jieguohuizong" />
-        <item index="2" class="java.lang.String" itemvalue="Python.qingxi" />
-        <item index="3" class="java.lang.String" itemvalue="Python.new-clean" />
+        <item index="0" class="java.lang.String" itemvalue="Python.new-clean" />
+        <item index="1" class="java.lang.String" itemvalue="Python.fix-clean" />
+        <item index="2" class="java.lang.String" itemvalue="Python.jieguohuizong" />
+        <item index="3" class="java.lang.String" itemvalue="Python.qingxi" />
         <item index="4" class="java.lang.String" itemvalue="Python.chenggongdinggou" />
       </list>
     </recent_temporary>
@@ -582,7 +596,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1929" y="105" width="1911" height="956" extended-state="0" />
+    <frame x="1931" y="82" width="1911" height="956" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15279958" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -591,18 +605,18 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32973805" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.059751973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32973805" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37993234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.059751973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37993234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -616,7 +630,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="47" />
+      <option name="time" value="48" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -876,11 +890,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/new-clean.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="79" column="118" lean-forward="false" selection-start-line="79" selection-start-column="118" selection-end-line="79" selection-end-column="118" />
+        <state relative-caret-position="34">
+          <caret line="93" column="38" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
           <folding>
-            <marker date="1488617891000" expanded="true" signature="507:637" ph="select * fro... sms_received_histories_all_thread" />
-            <marker date="1488617891000" expanded="true" signature="2264:2373" ph="select * fro... charge_codes_statistics" />
+            <marker date="1488620132000" expanded="true" signature="507:637" ph="select * fro... sms_received_histories_all_thread" />
+            <marker date="1488620132000" expanded="true" signature="2324:2433" ph="select * fro... charge_codes_statistics" />
           </folding>
         </state>
       </provider>

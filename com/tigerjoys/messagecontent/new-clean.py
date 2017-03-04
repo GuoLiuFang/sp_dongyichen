@@ -17,12 +17,13 @@ def fixData(day):
     sql = """select * from honeycomb.sms_received_histories_all_thread where content is not null and record_time between """ + start + """ and """ + end
     # print sql
     messageExecutor.execute(sql)
+    # messageExecutor.execute(sql + """ limit 1 """)
     messageContent = messageExecutor.fetchall()
     return messageContent
 
 
 def getValidMessage(message):
-    finished = ('点播了', '已', '感谢您', '订购的', '订购了', '生效')
+    finished = ('点播了', '已', '感谢您', '订购的', '订购了', '生效', '即将扣费')
     for i in finished:
         if i in message:
             return True
@@ -30,6 +31,8 @@ def getValidMessage(message):
 
 
 def getSubString(message):
+    start = 0
+    leng = len(message)
     a = 0
     if '已' in message:
         a = message.index('已')
@@ -39,17 +42,15 @@ def getSubString(message):
     c = 0
     if '订购了' in message:
         c = message.index('订购了')
-    d = 0
-    if '生效' in message:
-        d = message.index('生效')
-    start = max(a, b, c, d)
-    leng = 38
+    start = max(a, b, c)
+    if start > 0:
+        leng = 38
     targetStr = message[start:start + leng]
     return targetStr
 
 
 def getStatus(message):
-    baoyue = ('订购', '定制', '订制', '办理', '生效')
+    baoyue = ('订购', '定制', '订制', '办理', '生效', '即将扣费')
     dianbo = ('点播', '感谢您')
     cancel = ('取消', '退订')
     for i in dianbo:
@@ -89,6 +90,7 @@ csvlist = []
 
 for index in range(len(messageContent)):
     message = messageContent[index][2].encode(encoding='utf-8')
+    # message = """订购提醒：尊敬的客户，您好！您订购中国移动的生活全知道业务，10.00元/月，即将扣费，如有疑问可在24小时内回复“否”，我们将立即为您取消业务订购并不收取您任何费用。如需帮助，请咨询10086。中国移动"""
     isValid = getValidMessage(message)
     if not isValid:
         # -11代表不包含完成时的状态关键字
