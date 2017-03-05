@@ -31,7 +31,6 @@ def getValidMessage(message):
 
 
 def getSubString(message):
-    start = 0
     leng = len(message)
     a = 0
     if '已' in message:
@@ -75,12 +74,22 @@ def getChargeStr(message):
     return -1
 
 
+def getSpStr(charge_code_id):
+    for spMapTuple in chMapSp:
+        if charge_code_id == spMapTuple[0]:
+            return spMapTuple
+    return -1
+
+
 dbConnectChargeStatistic = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
                                            use_unicode=True, port=5209, charset='utf8')
 chargeCodeStatisticExecutor = dbConnectChargeStatistic.cursor()
 sql = """select * from charge_codes_statistics where yewucode_name not like '%包月%' AND yewucode_name not like '%小额支付%'"""
+spMapSql = """select * from charge_sp_mapping"""
 chargeCodeStatisticExecutor.execute(sql)
 yewucodeList = chargeCodeStatisticExecutor.fetchall()
+chargeCodeStatisticExecutor.execute(spMapSql)
+chMapSp = chargeCodeStatisticExecutor.fetchall()
 # messageContent = fixData('2016-11-01')
 messageContent = fixData(sys.argv[1])
 # 这是修补数据所在的地址
@@ -100,8 +109,7 @@ for index in range(len(messageContent)):
                 messageContent[index][4], messageContent[index][5], messageContent[index][6], messageContent[index][7],
                 messageContent[index][8], messageContent[index][9], messageContent[index][10],
                 messageContent[index][11], messageContent[index][12], messageContent[index][13],
-                -11,
-                -1, -1, -1, -1, -1, -1, -1, -1))
+                -11, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1))
         continue
     else:
         status = getStatus(message)
@@ -114,10 +122,15 @@ for index in range(len(messageContent)):
                     messageContent[index][3], messageContent[index][4], messageContent[index][5],
                     messageContent[index][6], messageContent[index][7], messageContent[index][8],
                     messageContent[index][9], messageContent[index][10], messageContent[index][11],
-                    messageContent[index][12], messageContent[index][13], -13, -1, -1,
-                    -1, -1, -1, -1, -1, -1))
+                    messageContent[index][12], messageContent[index][13], -13, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1))
                 continue
             else:
+                spMapStr = getSpStr(chargeStr[1])
+                spId = -1
+                spName = -1
+                if spMapStr != -1:
+                    spId = spMapStr[1]
+                    spName = spMapStr[2]
                 csvlist.append((
                     messageContent[index][0], messageContent[index][1], messageContent[index][2],
                     messageContent[index][3], messageContent[index][4], messageContent[index][5],
@@ -125,7 +138,7 @@ for index in range(len(messageContent)):
                     messageContent[index][9], messageContent[index][10], messageContent[index][11],
                     messageContent[index][12], messageContent[index][13], status,
                     chargeStr[1], chargeStr[2], chargeStr[3], chargeStr[4], chargeStr[5], chargeStr[6], chargeStr[7],
-                    chargeStr[8]))
+                    chargeStr[8], spId, spName))
                 continue
         else:
             # -12代表虽然包含了完成时，但是仍然不是要找的3个类别中的东西
@@ -134,8 +147,7 @@ for index in range(len(messageContent)):
                 messageContent[index][4], messageContent[index][5], messageContent[index][6], messageContent[index][7],
                 messageContent[index][8], messageContent[index][9], messageContent[index][10],
                 messageContent[index][11], messageContent[index][12], messageContent[index][13],
-                -12, -1, -1, -1,
-                -1, -1, -1, -1, -1))
+                -12, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1))
             continue
 for record in csvlist:
     csvfile.write('|'.join(str(e) for e in record) + "\n")
