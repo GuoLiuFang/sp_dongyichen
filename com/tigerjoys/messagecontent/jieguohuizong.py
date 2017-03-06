@@ -18,6 +18,19 @@ def getFormatStartEnd(yuefen):
     return (start, end)
 
 
+def composeSp(spIDList):
+    sp_id_list = ""
+    sp_name_list = ""
+    for spTuple in spIDList:
+        sp_id_list = sp_id_list + str(spTuple[0]) + ","
+        sp_name_list = sp_name_list + str(spTuple[1]) + ","
+    if not len(sp_id_list) > 0:
+        sp_id_list = "-1,"
+    if not len(sp_name_list) > 0:
+        sp_name_list = "-1,"
+    return (sp_id_list[:-1], sp_name_list[:-1])
+
+
 def noProvince():
     csvfile = open("/data/sdg/guoliufang/mysqloutfile/noProvince.txt", mode='wa+')
     # csvfile = open("/Users/LiuFangGuo/Downloads/noProvince.txt", mode='wa+')
@@ -25,7 +38,7 @@ def noProvince():
     dbMysqlConn = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
                                   use_unicode=True, port=5209, charset='utf8')
     myExecutor = dbMysqlConn.cursor()
-    smsSQL = """select extract(YEAR_MONTH FROM `record_time`) as yuefen, yewucode_name, count(DISTINCT uuid) from message_analysises where yewucode_name is not null and yewucode_name != '-1' and status = 2 GROUP  BY yuefen,yewucode_name"""
+    smsSQL = """select extract(YEAR_MONTH FROM `record_time`) as yuefen, yewucode_name, count(DISTINCT uuid) from message_analysises_sp where yewucode_name is not null and yewucode_name != '-1' and status = 2 GROUP  BY yuefen,yewucode_name"""
     myExecutor.execute(smsSQL)
     smsListTuple = myExecutor.fetchall()
     dbGpsqlConn = psycopg2.connect(database='tjdw', user='tj_root', password='77pbV1YU!T', host='192.168.12.14',
@@ -36,8 +49,13 @@ def noProvince():
         start_end = getFormatStartEnd(str(smsTuple[0]))
         unionNameSQL = """select distinct union_name from charge_codes_statistics where yewucode_name = '""" + smsTuple[
             1] + """'"""
+        spSQL = """select DISTINCT sp_id,sp_name from charge_sp_mapping WHERE charge_id in (select distinct charge_code_id from charge_codes_statistics where yewucode_name = '""" + \
+                smsTuple[1] + """')"""
         myExecutor.execute(unionNameSQL)
         unionNameListTuple = myExecutor.fetchall()
+        myExecutor.execute(spSQL)
+        spIDList = myExecutor.fetchall()
+        sptuple = composeSp(spIDList)
         inUnionNameListPartSQL = ''
         for unionNameTuple in unionNameListTuple:
             inUnionNameListPartSQL = """','""".join(str(e) for e in unionNameTuple) + """','""" + inUnionNameListPartSQL
@@ -58,7 +76,8 @@ def noProvince():
             elif rTuple[0] == 30:
                 a30 = rTuple[1]
         inUnionNameListPartSQL = "'" + inUnionNameListPartSQL + "'"
-        csvlist.append((smsTuple[0], smsTuple[1], inUnionNameListPartSQL, -1, a10, a20, smsTuple[2], a30))
+        csvlist.append(
+            (smsTuple[0], smsTuple[1], inUnionNameListPartSQL, sptuple[0], sptuple[1], -1, a10, a20, smsTuple[2], a30))
     for record in csvlist:
         csvfile.write('|'.join(str(e) for e in record) + "\n")
     csvfile.close()
@@ -71,7 +90,7 @@ def withProvince():
     dbMysqlConn = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
                                   use_unicode=True, port=5209, charset='utf8')
     myExecutor = dbMysqlConn.cursor()
-    smsSQL = """select extract(YEAR_MONTH FROM `record_time`) as yuefen, yewucode_name, province_id, count(DISTINCT uuid) from message_analysises where yewucode_name is not null and yewucode_name != '-1' and province_id != -1 and status = 2 GROUP  BY yuefen,yewucode_name,province_id"""
+    smsSQL = """select extract(YEAR_MONTH FROM `record_time`) as yuefen, yewucode_name, province_id, count(DISTINCT uuid) from message_analysises_sp where yewucode_name is not null and yewucode_name != '-1' and province_id != -1 and status = 2 GROUP  BY yuefen,yewucode_name,province_id"""
     myExecutor.execute(smsSQL)
     smsListTuple = myExecutor.fetchall()
     dbGpsqlConn = psycopg2.connect(database='tjdw', user='tj_root', password='77pbV1YU!T', host='192.168.12.14',
@@ -82,8 +101,13 @@ def withProvince():
         start_end = getFormatStartEnd(str(smsTuple[0]))
         unionNameSQL = """select distinct union_name from charge_codes_statistics where yewucode_name = '""" + smsTuple[
             1] + """'"""
+        spSQL = """select DISTINCT sp_id,sp_name from charge_sp_mapping WHERE charge_id in (select distinct charge_code_id from charge_codes_statistics where yewucode_name = '""" + \
+                smsTuple[1] + """')"""
         myExecutor.execute(unionNameSQL)
         unionNameListTuple = myExecutor.fetchall()
+        myExecutor.execute(spSQL)
+        spIDList = myExecutor.fetchall()
+        sptuple = composeSp(spIDList)
         inUnionNameListPartSQL = ''
         for unionNameTuple in unionNameListTuple:
             inUnionNameListPartSQL = """','""".join(str(e) for e in unionNameTuple) + """','""" + inUnionNameListPartSQL
@@ -105,7 +129,8 @@ def withProvince():
             elif rTuple[0] == 30:
                 a30 = rTuple[1]
         inUnionNameListPartSQL = "'" + inUnionNameListPartSQL + "'"
-        csvlist.append((smsTuple[0], smsTuple[1], inUnionNameListPartSQL, smsTuple[2], a10, a20, smsTuple[3], a30))
+        csvlist.append((smsTuple[0], smsTuple[1], inUnionNameListPartSQL, sptuple[0], sptuple[1], smsTuple[2], a10, a20,
+                        smsTuple[3], a30))
     for record in csvlist:
         csvfile.write('|'.join(str(e) for e in record) + "\n")
     csvfile.close()
@@ -113,7 +138,7 @@ def withProvince():
 
 noProvince()
 os.system(
-    """/usr/local/Calpont/bin/cpimport honeycomb jieguohuizong -s '|' /data/sdg/guoliufang/mysqloutfile/noProvince.txt""")
+    """/usr/local/Calpont/bin/cpimport honeycomb jieguohuizong_sp -s '|' /data/sdg/guoliufang/mysqloutfile/noProvince.txt""")
 withProvince()
 os.system(
-    """/usr/local/Calpont/bin/cpimport honeycomb jieguohuizong -s '|' /data/sdg/guoliufang/mysqloutfile/withProvince.txt""")
+    """/usr/local/Calpont/bin/cpimport honeycomb jieguohuizong_sp -s '|' /data/sdg/guoliufang/mysqloutfile/withProvince.txt""")
