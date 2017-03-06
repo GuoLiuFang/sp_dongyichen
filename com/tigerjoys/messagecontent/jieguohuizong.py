@@ -65,6 +65,34 @@ def noProvince():
                                    1] + " and code_union_name in ('" + inUnionNameListPartSQL + "') group by code_event order by code_event"
         gpExecutor.execute(gpXiaFaLiLunShiJiSQL)
         XiaFaLiLunShiJiTupleList = gpExecutor.fetchall()
+        # compute the intersection
+        xifaSql = "select distinct uuid from BDL.crab_code_histories  where record_time BETWEEN " + start_end[
+            0] + " and " + start_end[
+                      1] + " and code_union_name in ('" + inUnionNameListPartSQL + "') and code_event = 10"
+        gpExecutor.execute(xifaSql)
+        XiaList = gpExecutor.fetchall()
+        lilunSql = "select distinct uuid from BDL.crab_code_histories  where record_time BETWEEN " + start_end[
+            0] + " and " + start_end[
+                       1] + " and code_union_name in ('" + inUnionNameListPartSQL + "') and code_event = 20"
+        gpExecutor.execute(lilunSql)
+        LiLunList = gpExecutor.fetchall()
+        shijiSql = "select distinct uuid from BDL.crab_code_histories  where record_time BETWEEN " + start_end[
+            0] + " and " + start_end[
+                       1] + " and code_union_name in ('" + inUnionNameListPartSQL + "') and code_event = 30"
+        gpExecutor.execute(shijiSql)
+        ShiJiList = gpExecutor.fetchall()
+        duanxinSql = "select distinct uuid from message_analysises_sp  where record_time BETWEEN " + start_end[
+            0] + " and " + start_end[1] + " and yewucode_name = '" + smsTuple[1] + "' and status = 2 "
+        myExecutor.execute(duanxinSql)
+        DuanXinList = myExecutor.fetchall()
+        xiafaSet = set(XiaList)
+        lilunSet = set(LiLunList)
+        duanxinSet = set(DuanXinList)
+        shijiSet = set(ShiJiList)
+        xiafa_inner_lilun = len(xiafaSet.intersection(lilunSet))
+        lilun_inner_sms = len(lilunSet.intersection(duanxinSet))
+        sms_inner_shiji = len(duanxinSet.intersection(shijiSet))
+
         a10 = 0
         a20 = 0
         a30 = 0
@@ -77,7 +105,8 @@ def noProvince():
                 a30 = rTuple[1]
         inUnionNameListPartSQL = "'" + inUnionNameListPartSQL + "'"
         csvlist.append(
-            (smsTuple[0], smsTuple[1], inUnionNameListPartSQL, sptuple[0], sptuple[1], -1, a10, a20, smsTuple[2], a30))
+            (smsTuple[0], smsTuple[1], inUnionNameListPartSQL, sptuple[0], sptuple[1], -1, a10, xiafa_inner_lilun, a20,
+             lilun_inner_sms, smsTuple[2], sms_inner_shiji, a30))
     for record in csvlist:
         csvfile.write('|'.join(str(e) for e in record) + "\n")
     csvfile.close()
@@ -118,6 +147,37 @@ def withProvince():
             smsTuple[2]) + " group by code_event order by code_event"
         gpExecutor.execute(gpXiaFaLiLunShiJiSQL)
         XiaFaLiLunShiJiTupleList = gpExecutor.fetchall()
+        # compute the intersection
+        xifaSql = "select distinct uuid from BDL.crab_code_histories  where record_time BETWEEN " + start_end[
+            0] + " and " + start_end[
+                      1] + " and code_union_name in ('" + inUnionNameListPartSQL + "') and code_event = 10 and province_id = " + str(
+            smsTuple[2])
+        gpExecutor.execute(xifaSql)
+        XiaList = gpExecutor.fetchall()
+        lilunSql = "select distinct uuid from BDL.crab_code_histories  where record_time BETWEEN " + start_end[
+            0] + " and " + start_end[
+                       1] + " and code_union_name in ('" + inUnionNameListPartSQL + "') and code_event = 20 and province_id = " + str(
+            smsTuple[2])
+        LiLunList = gpExecutor.fetchall()
+        shijiSql = "select distinct uuid from BDL.crab_code_histories  where record_time BETWEEN " + start_end[
+            0] + " and " + start_end[
+                       1] + " and code_union_name in ('" + inUnionNameListPartSQL + "') and code_event = 30 and province_id = " + str(
+            smsTuple[2])
+        gpExecutor.execute(shijiSql)
+        ShiJiList = gpExecutor.fetchall()
+        duanxinSql = "select distinct uuid from message_analysises_sp  where record_time BETWEEN " + start_end[
+            0] + " and " + start_end[1] + " and yewucode_name = '" + smsTuple[
+                         1] + "' and status = 2  and province_id = " + str(smsTuple[2])
+        myExecutor.execute(duanxinSql)
+        DuanXinList = myExecutor.fetchall()
+        xiafaSet = set(XiaList)
+        lilunSet = set(LiLunList)
+        duanxinSet = set(DuanXinList)
+        shijiSet = set(ShiJiList)
+        xiafa_inner_lilun = len(xiafaSet.intersection(lilunSet))
+        lilun_inner_sms = len(lilunSet.intersection(duanxinSet))
+        sms_inner_shiji = len(duanxinSet.intersection(shijiSet))
+
         a10 = 0
         a20 = 0
         a30 = 0
@@ -129,8 +189,8 @@ def withProvince():
             elif rTuple[0] == 30:
                 a30 = rTuple[1]
         inUnionNameListPartSQL = "'" + inUnionNameListPartSQL + "'"
-        csvlist.append((smsTuple[0], smsTuple[1], inUnionNameListPartSQL, sptuple[0], sptuple[1], smsTuple[2], a10, a20,
-                        smsTuple[3], a30))
+        csvlist.append((smsTuple[0], smsTuple[1], inUnionNameListPartSQL, sptuple[0], sptuple[1], smsTuple[2], a10,
+                        xiafa_inner_lilun, a20, lilun_inner_sms, smsTuple[2], sms_inner_shiji, a30))
     for record in csvlist:
         csvfile.write('|'.join(str(e) for e in record) + "\n")
     csvfile.close()
@@ -138,7 +198,7 @@ def withProvince():
 
 noProvince()
 os.system(
-    """/usr/local/Calpont/bin/cpimport honeycomb jieguohuizong_sp -s '|' /data/sdg/guoliufang/mysqloutfile/noProvince.txt""")
+    """/usr/local/Calpont/bin/cpimport honeycomb yewuma_jieguohuizong -s '|' /data/sdg/guoliufang/mysqloutfile/noProvince.txt""")
 withProvince()
 os.system(
-    """/usr/local/Calpont/bin/cpimport honeycomb jieguohuizong_sp -s '|' /data/sdg/guoliufang/mysqloutfile/withProvince.txt""")
+    """/usr/local/Calpont/bin/cpimport honeycomb yewuma_jieguohuizong -s '|' /data/sdg/guoliufang/mysqloutfile/withProvince.txt""")
