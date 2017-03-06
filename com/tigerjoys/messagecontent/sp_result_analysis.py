@@ -48,7 +48,7 @@ def noProvince():
         # 0-yuefen,1-sp_id,2-sp_name,3-duamxin
         start_end = getFormatStartEnd(str(smsTuple[0]))
         # 这里面也就是union_name_list发生了变化
-        unionNameSQL = "select distinct union_name from charge_codes_statistics where record_time BETWEEN " + start_end[
+        unionNameSQL = "select distinct union_name from message_analysises_sp where record_time BETWEEN " + start_end[
             0] + " and " + start_end[1] + " and sp_id = " + str(smsTuple[1])
         myExecutor.execute(unionNameSQL)
         unionNameListTuple = myExecutor.fetchall()
@@ -126,7 +126,7 @@ def withProvince():
     for smsTuple in smsListTuple:
         # 0-yuefen,1-sp_id,2-sp_name,3-province-id,4-duanxi
         start_end = getFormatStartEnd(str(smsTuple[0]))
-        unionNameSQL = "select distinct union_name from charge_codes_statistics where record_time BETWEEN " + start_end[
+        unionNameSQL = "select distinct union_name from message_analysises_sp where record_time BETWEEN " + start_end[
             0] + " and " + start_end[1] + " and sp_id = " + str(smsTuple[1])
         myExecutor.execute(unionNameSQL)
         unionNameListTuple = myExecutor.fetchall()
