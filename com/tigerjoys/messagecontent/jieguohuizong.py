@@ -32,8 +32,8 @@ def composeSp(spIDList):
 
 
 def noProvince():
-    csvfile = open("/data/sdg/guoliufang/mysqloutfile/noProvince.txt", mode='wa+')
-    # csvfile = open("/Users/LiuFangGuo/Downloads/noProvince.txt", mode='wa+')
+    csvfile = open("/data/sdg/guoliufang/mysqloutfile/intersectionnoProvince.txt", mode='wa+')
+    # csvfile = open("/Users/LiuFangGuo/Downloads/intersectionnoProvince.txt", mode='wa+')
     csvlist = []
     dbMysqlConn = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
                                   use_unicode=True, port=5209, charset='utf8')
@@ -113,8 +113,8 @@ def noProvince():
 
 
 def withProvince():
-    csvfile = open("/data/sdg/guoliufang/mysqloutfile/withProvince.txt", mode='wa+')
-    # csvfile = open("/Users/LiuFangGuo/Downloads/withProvince.txt", mode='wa+')
+    csvfile = open("/data/sdg/guoliufang/mysqloutfile/intersectionwithProvince.txt", mode='wa+')
+    # csvfile = open("/Users/LiuFangGuo/Downloads/intersectionwithProvince.txt", mode='wa+')
     csvlist = []
     dbMysqlConn = MySQLdb.connect(host='192.168.12.155', user='guoliufang', passwd='tiger2108', db='honeycomb',
                                   use_unicode=True, port=5209, charset='utf8')
@@ -198,7 +198,7 @@ def withProvince():
 
 noProvince()
 os.system(
-    """/usr/local/Calpont/bin/cpimport honeycomb yewuma_jieguohuizong -s '|' /data/sdg/guoliufang/mysqloutfile/noProvince.txt""")
+    """/usr/local/Calpont/bin/cpimport honeycomb yewuma_jieguohuizong -s '|' /data/sdg/guoliufang/mysqloutfile/intersectionnoProvince.txt""")
 withProvince()
 os.system(
-    """/usr/local/Calpont/bin/cpimport honeycomb yewuma_jieguohuizong -s '|' /data/sdg/guoliufang/mysqloutfile/withProvince.txt""")
+    """/usr/local/Calpont/bin/cpimport honeycomb yewuma_jieguohuizong -s '|' /data/sdg/guoliufang/mysqloutfile/intersectionwithProvince.txt""")

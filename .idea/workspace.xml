@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22c28c5b-827b-4464-8dd7-f5c0a0b77052" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/tigerjoys/messagecontent/jieguohuizong.py" afterPath="$PROJECT_DIR$/com/tigerjoys/messagecontent/jieguohuizong.py" />
     </list>
     <ignored path="sp_dongyichen.iws" />
@@ -42,39 +41,27 @@
       <file leaf-file-name="jieguohuizong.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/jieguohuizong.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="659">
-              <caret line="192" column="98" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+            <state relative-caret-position="824">
+              <caret line="203" column="139" lean-forward="false" selection-start-line="203" selection-start-column="139" selection-end-line="203" selection-end-column="139" />
               <folding>
-                <marker date="1488798499000" expanded="true" signature="1246:1362" ph="select extra... message_analysises" />
-                <marker date="1488798499000" expanded="true" signature="1246:1469" ph="select extra... message_analysises_sp" />
-                <marker date="1488798499000" expanded="true" signature="1894:2010" ph="select disti... charge_codes_statistics" />
-                <marker date="1488798499000" expanded="true" signature="2033:2232" ph="select DISTI... charge_sp_mapping" />
-                <marker date="1488798499000" expanded="true" signature="2106:2231" ph="select disti... charge_codes_statistics" />
-                <marker date="1488798499000" expanded="true" signature="2741:3048" ph="select code_... crab_code_histories" />
-                <marker date="1488798499000" expanded="true" signature="3210:3446" ph="select disti... crab_code_histories" />
-                <marker date="1488798499000" expanded="true" signature="3544:3781" ph="select disti... crab_code_histories" />
-                <marker date="1488798499000" expanded="true" signature="3882:4119" ph="select disti... crab_code_histories" />
-                <marker date="1488798499000" expanded="true" signature="4222:4335" ph="select disti... message_analysises_sp" />
-                <marker date="1488798499000" expanded="true" signature="4222:4354" ph="select disti... message_analysises_sp" />
-                <marker date="1488798499000" expanded="true" signature="4222:4375" ph="select disti... message_analysises_sp" />
-                <marker date="1488798499000" expanded="true" signature="4222:4377" ph="select disti... message_analysises_sp" />
-                <marker date="1488798499000" expanded="true" signature="4222:4397" ph="select disti... message_analysises_sp" />
-                <marker date="1488798499000" expanded="true" signature="4222:4412" ph="select disti... message_analysises_sp" />
-                <marker date="1488798499000" expanded="true" signature="4222:4413" ph="select disti... message_analysises_sp" />
-                <marker date="1488798499000" expanded="true" signature="5962:6232" ph="select extra... message_analysises_sp" />
-                <marker date="1488798499000" expanded="true" signature="6094:6232" ph="select extra... message_analysises" />
-                <marker date="1488798499000" expanded="true" signature="6671:6787" ph="select disti... charge_codes_statistics" />
-                <marker date="1488798499000" expanded="true" signature="6810:7009" ph="select DISTI... charge_sp_mapping" />
-                <marker date="1488798499000" expanded="true" signature="6883:7008" ph="select disti... charge_codes_statistics" />
-                <marker date="1488798499000" expanded="true" signature="7518:7881" ph="select code_... crab_code_histories" />
-                <marker date="1488798499000" expanded="true" signature="8043:8279" ph="select disti... crab_code_histories" />
-                <marker date="1488798499000" expanded="true" signature="8043:8298" ph="select disti... crab_code_histories" />
-                <marker date="1488798499000" expanded="true" signature="8428:8665" ph="select disti... crab_code_histories" />
-                <marker date="1488798499000" expanded="true" signature="8428:8684" ph="select disti... crab_code_histories" />
-                <marker date="1488798499000" expanded="true" signature="8780:9017" ph="select disti... crab_code_histories" />
-                <marker date="1488798499000" expanded="true" signature="8780:9036" ph="select disti... crab_code_histories" />
-                <marker date="1488798499000" expanded="true" signature="9171:9387" ph="select disti... message_analysises_sp" />
-                <marker date="1488798499000" expanded="true" signature="9171:9407" ph="select disti... message_analysises_sp" />
+                <marker date="1488798921000" expanded="true" signature="1270:1493" ph="select extra... message_analysises_sp" />
+                <marker date="1488798921000" expanded="true" signature="1918:2034" ph="select disti... charge_codes_statistics" />
+                <marker date="1488798921000" expanded="true" signature="2057:2256" ph="select DISTI... charge_sp_mapping" />
+                <marker date="1488798921000" expanded="true" signature="2130:2255" ph="select disti... charge_codes_statistics" />
+                <marker date="1488798921000" expanded="true" signature="2765:3072" ph="select code_... crab_code_histories" />
+                <marker date="1488798921000" expanded="true" signature="3234:3470" ph="select disti... crab_code_histories" />
+                <marker date="1488798921000" expanded="true" signature="3568:3805" ph="select disti... crab_code_histories" />
+                <marker date="1488798921000" expanded="true" signature="3906:4143" ph="select disti... crab_code_histories" />
+                <marker date="1488798921000" expanded="true" signature="4246:4436" ph="select disti... message_analysises_sp" />
+                <marker date="1488798921000" expanded="true" signature="6010:6280" ph="select extra... message_analysises_sp" />
+                <marker date="1488798921000" expanded="true" signature="6719:6835" ph="select disti... charge_codes_statistics" />
+                <marker date="1488798921000" expanded="true" signature="6858:7057" ph="select DISTI... charge_sp_mapping" />
+                <marker date="1488798921000" expanded="true" signature="6931:7056" ph="select disti... charge_codes_statistics" />
+                <marker date="1488798921000" expanded="true" signature="7566:7929" ph="select code_... crab_code_histories" />
+                <marker date="1488798921000" expanded="true" signature="8091:8346" ph="select disti... crab_code_histories" />
+                <marker date="1488798921000" expanded="true" signature="8476:8732" ph="select disti... crab_code_histories" />
+                <marker date="1488798921000" expanded="true" signature="8828:9084" ph="select disti... crab_code_histories" />
+                <marker date="1488798921000" expanded="true" signature="9219:9455" ph="select disti... message_analysises_sp" />
               </folding>
             </state>
           </provider>
@@ -104,6 +91,7 @@
       <find>rtuple</find>
       <find>print</find>
       <find>-1, -1, -1, -1, -1, -1, -1, -1</find>
+      <find>withProvince.txt</find>
     </findStrings>
     <replaceStrings>
       <replace>messageContent[index][7],messageContent[index][8],messageContent[index][9],messageContent[index][10],messageContent[index][11],messageContent[index][12],messageContent[index][13]</replace>
@@ -116,6 +104,7 @@
       <replace>rtuple</replace>
       <replace>rTuple</replace>
       <replace>-1, -1, -1, -1, -1, -1, -1, -1,-1,-1</replace>
+      <replace>intersectionwithProvince.txt</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -149,8 +138,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2010" />
-    <option name="y" value="40" />
+    <option name="x" value="2211" />
+    <option name="y" value="65" />
     <option name="width" value="1842" />
     <option name="height" value="1040" />
   </component>
@@ -613,7 +602,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2010" y="40" width="1842" height="1040" extended-state="0" />
+    <frame x="2211" y="65" width="1842" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16286644" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -911,39 +900,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/jieguohuizong.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="192" column="98" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+        <state relative-caret-position="824">
+          <caret line="203" column="139" lean-forward="false" selection-start-line="203" selection-start-column="139" selection-end-line="203" selection-end-column="139" />
           <folding>
-            <marker date="1488798499000" expanded="true" signature="1246:1362" ph="select extra... message_analysises" />
-            <marker date="1488798499000" expanded="true" signature="1246:1469" ph="select extra... message_analysises_sp" />
-            <marker date="1488798499000" expanded="true" signature="1894:2010" ph="select disti... charge_codes_statistics" />
-            <marker date="1488798499000" expanded="true" signature="2033:2232" ph="select DISTI... charge_sp_mapping" />
-            <marker date="1488798499000" expanded="true" signature="2106:2231" ph="select disti... charge_codes_statistics" />
-            <marker date="1488798499000" expanded="true" signature="2741:3048" ph="select code_... crab_code_histories" />
-            <marker date="1488798499000" expanded="true" signature="3210:3446" ph="select disti... crab_code_histories" />
-            <marker date="1488798499000" expanded="true" signature="3544:3781" ph="select disti... crab_code_histories" />
-            <marker date="1488798499000" expanded="true" signature="3882:4119" ph="select disti... crab_code_histories" />
-            <marker date="1488798499000" expanded="true" signature="4222:4335" ph="select disti... message_analysises_sp" />
-            <marker date="1488798499000" expanded="true" signature="4222:4354" ph="select disti... message_analysises_sp" />
-            <marker date="1488798499000" expanded="true" signature="4222:4375" ph="select disti... message_analysises_sp" />
-            <marker date="1488798499000" expanded="true" signature="4222:4377" ph="select disti... message_analysises_sp" />
-            <marker date="1488798499000" expanded="true" signature="4222:4397" ph="select disti... message_analysises_sp" />
-            <marker date="1488798499000" expanded="true" signature="4222:4412" ph="select disti... message_analysises_sp" />
-            <marker date="1488798499000" expanded="true" signature="4222:4413" ph="select disti... message_analysises_sp" />
-            <marker date="1488798499000" expanded="true" signature="5962:6232" ph="select extra... message_analysises_sp" />
-            <marker date="1488798499000" expanded="true" signature="6094:6232" ph="select extra... message_analysises" />
-            <marker date="1488798499000" expanded="true" signature="6671:6787" ph="select disti... charge_codes_statistics" />
-            <marker date="1488798499000" expanded="true" signature="6810:7009" ph="select DISTI... charge_sp_mapping" />
-            <marker date="1488798499000" expanded="true" signature="6883:7008" ph="select disti... charge_codes_statistics" />
-            <marker date="1488798499000" expanded="true" signature="7518:7881" ph="select code_... crab_code_histories" />
-            <marker date="1488798499000" expanded="true" signature="8043:8279" ph="select disti... crab_code_histories" />
-            <marker date="1488798499000" expanded="true" signature="8043:8298" ph="select disti... crab_code_histories" />
-            <marker date="1488798499000" expanded="true" signature="8428:8665" ph="select disti... crab_code_histories" />
-            <marker date="1488798499000" expanded="true" signature="8428:8684" ph="select disti... crab_code_histories" />
-            <marker date="1488798499000" expanded="true" signature="8780:9017" ph="select disti... crab_code_histories" />
-            <marker date="1488798499000" expanded="true" signature="8780:9036" ph="select disti... crab_code_histories" />
-            <marker date="1488798499000" expanded="true" signature="9171:9387" ph="select disti... message_analysises_sp" />
-            <marker date="1488798499000" expanded="true" signature="9171:9407" ph="select disti... message_analysises_sp" />
+            <marker date="1488798921000" expanded="true" signature="1270:1493" ph="select extra... message_analysises_sp" />
+            <marker date="1488798921000" expanded="true" signature="1918:2034" ph="select disti... charge_codes_statistics" />
+            <marker date="1488798921000" expanded="true" signature="2057:2256" ph="select DISTI... charge_sp_mapping" />
+            <marker date="1488798921000" expanded="true" signature="2130:2255" ph="select disti... charge_codes_statistics" />
+            <marker date="1488798921000" expanded="true" signature="2765:3072" ph="select code_... crab_code_histories" />
+            <marker date="1488798921000" expanded="true" signature="3234:3470" ph="select disti... crab_code_histories" />
+            <marker date="1488798921000" expanded="true" signature="3568:3805" ph="select disti... crab_code_histories" />
+            <marker date="1488798921000" expanded="true" signature="3906:4143" ph="select disti... crab_code_histories" />
+            <marker date="1488798921000" expanded="true" signature="4246:4436" ph="select disti... message_analysises_sp" />
+            <marker date="1488798921000" expanded="true" signature="6010:6280" ph="select extra... message_analysises_sp" />
+            <marker date="1488798921000" expanded="true" signature="6719:6835" ph="select disti... charge_codes_statistics" />
+            <marker date="1488798921000" expanded="true" signature="6858:7057" ph="select DISTI... charge_sp_mapping" />
+            <marker date="1488798921000" expanded="true" signature="6931:7056" ph="select disti... charge_codes_statistics" />
+            <marker date="1488798921000" expanded="true" signature="7566:7929" ph="select code_... crab_code_histories" />
+            <marker date="1488798921000" expanded="true" signature="8091:8346" ph="select disti... crab_code_histories" />
+            <marker date="1488798921000" expanded="true" signature="8476:8732" ph="select disti... crab_code_histories" />
+            <marker date="1488798921000" expanded="true" signature="8828:9084" ph="select disti... crab_code_histories" />
+            <marker date="1488798921000" expanded="true" signature="9219:9455" ph="select disti... message_analysises_sp" />
           </folding>
         </state>
       </provider>
