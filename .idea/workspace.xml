@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22c28c5b-827b-4464-8dd7-f5c0a0b77052" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/tigerjoys/messagecontent/yewumasp.py" afterPath="$PROJECT_DIR$/com/tigerjoys/messagecontent/yewumasp.py" />
     </list>
     <ignored path="sp_dongyichen.iws" />
@@ -41,21 +42,19 @@
       <file leaf-file-name="yewumasp.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/yewumasp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="82" column="119" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+            <state relative-caret-position="525">
+              <caret line="97" column="36" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
               <folding>
-                <marker date="1490066081000" expanded="true" signature="1257:1586" ph="select extra... message_analysises_sp" />
-                <marker date="1490066081000" expanded="true" signature="2011:2127" ph="select disti... charge_codes_statistics" />
-                <marker date="1490066081000" expanded="true" signature="2150:2349" ph="select DISTI... charge_sp_mapping" />
-                <marker date="1490066081000" expanded="true" signature="2223:2348" ph="select disti... charge_codes_statistics" />
-                <marker date="1490066081000" expanded="true" signature="2858:3165" ph="select code_... crab_code_histories" />
-                <marker date="1490066081000" expanded="true" signature="4337:4573" ph="select extra... message_analysises_sp" />
-                <marker date="1490066081000" expanded="true" signature="4337:4713" ph="select extra... message_analysises_sp" />
-                <marker date="1490066081000" expanded="true" signature="5152:5268" ph="select disti... charge_codes_statistics" />
-                <marker date="1490066081000" expanded="true" signature="5291:5490" ph="select DISTI... charge_sp_mapping" />
-                <marker date="1490066081000" expanded="true" signature="5364:5489" ph="select disti... charge_codes_statistics" />
-                <marker date="1490066081000" expanded="true" signature="5999:6152" ph="select code_... crab_code_histories" />
-                <marker date="1490066081000" expanded="true" signature="5999:6362" ph="select code_... crab_code_histories" />
+                <marker date="1490080548000" expanded="true" signature="1257:1601" ph="select extra... message_analysises_sp" />
+                <marker date="1490080548000" expanded="true" signature="2026:2142" ph="select disti... charge_codes_statistics" />
+                <marker date="1490080548000" expanded="true" signature="2165:2364" ph="select DISTI... charge_sp_mapping" />
+                <marker date="1490080548000" expanded="true" signature="2238:2363" ph="select disti... charge_codes_statistics" />
+                <marker date="1490080548000" expanded="true" signature="2873:3180" ph="select code_... crab_code_histories" />
+                <marker date="1490080548000" expanded="true" signature="4352:4743" ph="select extra... message_analysises_sp" />
+                <marker date="1490080548000" expanded="true" signature="5182:5298" ph="select disti... charge_codes_statistics" />
+                <marker date="1490080548000" expanded="true" signature="5321:5520" ph="select DISTI... charge_sp_mapping" />
+                <marker date="1490080548000" expanded="true" signature="5394:5519" ph="select disti... charge_codes_statistics" />
+                <marker date="1490080548000" expanded="true" signature="6029:6392" ph="select code_... crab_code_histories" />
               </folding>
             </state>
           </provider>
@@ -174,8 +173,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1920" />
-    <option name="y" value="23" />
+    <option name="x" value="2121" />
+    <option name="y" value="40" />
     <option name="width" value="1920" />
     <option name="height" value="977" />
   </component>
@@ -194,6 +193,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -284,8 +285,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -638,10 +637,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="23" width="1920" height="977" extended-state="0" />
-    <editor active="false" />
+    <frame x="2121" y="40" width="1920" height="977" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15208334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15208334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -936,21 +935,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/com/tigerjoys/messagecontent/yewumasp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="82" column="119" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+        <state relative-caret-position="525">
+          <caret line="97" column="36" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
           <folding>
-            <marker date="1490066081000" expanded="true" signature="1257:1586" ph="select extra... message_analysises_sp" />
-            <marker date="1490066081000" expanded="true" signature="2011:2127" ph="select disti... charge_codes_statistics" />
-            <marker date="1490066081000" expanded="true" signature="2150:2349" ph="select DISTI... charge_sp_mapping" />
-            <marker date="1490066081000" expanded="true" signature="2223:2348" ph="select disti... charge_codes_statistics" />
-            <marker date="1490066081000" expanded="true" signature="2858:3165" ph="select code_... crab_code_histories" />
-            <marker date="1490066081000" expanded="true" signature="4337:4573" ph="select extra... message_analysises_sp" />
-            <marker date="1490066081000" expanded="true" signature="4337:4713" ph="select extra... message_analysises_sp" />
-            <marker date="1490066081000" expanded="true" signature="5152:5268" ph="select disti... charge_codes_statistics" />
-            <marker date="1490066081000" expanded="true" signature="5291:5490" ph="select DISTI... charge_sp_mapping" />
-            <marker date="1490066081000" expanded="true" signature="5364:5489" ph="select disti... charge_codes_statistics" />
-            <marker date="1490066081000" expanded="true" signature="5999:6152" ph="select code_... crab_code_histories" />
-            <marker date="1490066081000" expanded="true" signature="5999:6362" ph="select code_... crab_code_histories" />
+            <marker date="1490080548000" expanded="true" signature="1257:1601" ph="select extra... message_analysises_sp" />
+            <marker date="1490080548000" expanded="true" signature="2026:2142" ph="select disti... charge_codes_statistics" />
+            <marker date="1490080548000" expanded="true" signature="2165:2364" ph="select DISTI... charge_sp_mapping" />
+            <marker date="1490080548000" expanded="true" signature="2238:2363" ph="select disti... charge_codes_statistics" />
+            <marker date="1490080548000" expanded="true" signature="2873:3180" ph="select code_... crab_code_histories" />
+            <marker date="1490080548000" expanded="true" signature="4352:4743" ph="select extra... message_analysises_sp" />
+            <marker date="1490080548000" expanded="true" signature="5182:5298" ph="select disti... charge_codes_statistics" />
+            <marker date="1490080548000" expanded="true" signature="5321:5520" ph="select DISTI... charge_sp_mapping" />
+            <marker date="1490080548000" expanded="true" signature="5394:5519" ph="select disti... charge_codes_statistics" />
+            <marker date="1490080548000" expanded="true" signature="6029:6392" ph="select code_... crab_code_histories" />
           </folding>
         </state>
       </provider>

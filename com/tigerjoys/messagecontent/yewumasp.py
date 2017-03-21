@@ -40,8 +40,8 @@ def noProvince():
                                   use_unicode=True, port=5209, charset='utf8')
     myExecutor = dbMysqlConn.cursor()
     smsSQL = """select extract(YEAR_MONTH FROM `record_time`) as yuefen, yewucode_name, count(DISTINCT uuid) from message_analysises_sp where record_time BETWEEN """ + \
-             sys.argv[1] + " and " + sys.argv[
-                 2] + """ and  yewucode_name is not null and yewucode_name != '-1' and status = 2 GROUP  BY yuefen,yewucode_name"""
+             sys.argv[1] + """ and '""" + sys.argv[
+                 2] + """ 23:59:59' and  yewucode_name is not null and yewucode_name != '-1' and status = 2 GROUP  BY yuefen,yewucode_name"""
     myExecutor.execute(smsSQL)
     smsListTuple = myExecutor.fetchall()
     dbGpsqlConn = psycopg2.connect(database='tjdw', user='tj_root', password='77pbV1YU!T', host='192.168.12.14',
@@ -94,8 +94,8 @@ def withProvince():
                                   use_unicode=True, port=5209, charset='utf8')
     myExecutor = dbMysqlConn.cursor()
     smsSQL = """select extract(YEAR_MONTH FROM `record_time`) as yuefen, yewucode_name, province_id, count(DISTINCT uuid) from message_analysises_sp where record_time BETWEEN """ + \
-             sys.argv[1] + " and " + sys.argv[
-                 2] + """ and  yewucode_name is not null and yewucode_name != '-1' and province_id != -1 and status = 2 GROUP  BY yuefen,yewucode_name,province_id"""
+             sys.argv[1] + """ and '""" + sys.argv[
+                 2] + """ 23:59:59' and  yewucode_name is not null and yewucode_name != '-1' and province_id != -1 and status = 2 GROUP  BY yuefen,yewucode_name,province_id"""
     myExecutor.execute(smsSQL)
     smsListTuple = myExecutor.fetchall()
     dbGpsqlConn = psycopg2.connect(database='tjdw', user='tj_root', password='77pbV1YU!T', host='192.168.12.14',
